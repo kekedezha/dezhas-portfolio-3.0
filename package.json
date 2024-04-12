@@ -9,18 +9,37 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^14.2.1",
+    "@next/mdx": "^14.2.1",
+    "@upstash/redis": "^1.29.0",
+    "contentlayer": "^0.3.4",
+    "framer-motion": "^11.0.28",
+    "markdown-wasm": "^1.2.0",
+    "next": "^13.5.0",
+    "next-contentlayer": "^0.3.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.0"
+    "react-wrap-balancer": "^1.1.0",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-pretty-code": "^0.13.1",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.0",
+    "typescript": "^5.2.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@opentelemetry/api": "^1.4.1",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "autoprefixer": "^10.4.19",
     "eslint": "^8",
-    "eslint-config-next": "14.2.0"
+    "eslint-config-next": "14.2.0",
+    "postcss": "^8",
+    "postcss-nesting": "^12.1.1",
+    "rome": "^12.1.3",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-debug-screens": "^2.2.1"
   }
 }
