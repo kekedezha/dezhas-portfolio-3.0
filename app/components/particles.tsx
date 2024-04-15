@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
-import { useMousePosition } from "@/util/mouse";
+import { useMousePosition } from "../../util/mouse";
 
 interface ParticlesProps {
 	className?: string;
 	quantity?: number;
-	staticticity?: number;
+	staticity?: number;
 	ease?: number;
 	refresh?: boolean;
 }
@@ -14,7 +14,7 @@ interface ParticlesProps {
 export default function Particles({
 	className = "",
 	quantity = 30,
-	staticticity = 50,
+	staticity = 50,
 	ease = 50,
 	refresh = false,
 }: ParticlesProps) {
@@ -191,10 +191,10 @@ export default function Particles({
 			circle.x += circle.dx;
 			circle.y += circle.dy;
 			circle.translateX +=
-				(mouse.current.x / (staticticity / circle.magnetism) - circle.translateX) /
+				(mouse.current.x / (staticity / circle.magnetism) - circle.translateX) /
 				ease;
 			circle.translateY +=
-				(mouse.current.y / (staticticity / circle.magnetism) - circle.translateY) /
+				(mouse.current.y / (staticity / circle.magnetism) - circle.translateY) /
 				ease;
 			// circle gets out of the canvas
 			if (
