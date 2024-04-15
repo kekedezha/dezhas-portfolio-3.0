@@ -39,16 +39,20 @@ const calSans = LocalFont({
   variable: "--font-calsans",
 });
 
-export default function RootLayout({children,}: {children: React.ReactNode;}) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {  
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
-    <head>
-    </head>
-    <body
-      className={`bg-black undefined`}
-    >
-      {children}
-    </body>
-  </html>
+      <head>
+      </head>
+      <body
+        className={`bg-black undefined`}
+      >
+        {children}
+      </body>
+    </html>
   );
 }
