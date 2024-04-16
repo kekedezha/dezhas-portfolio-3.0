@@ -14,6 +14,7 @@
     "@upstash/redis": "^1.29.0",
     "contentlayer": "^0.3.4",
     "framer-motion": "^11.0.28",
+    "lucide-react": "^0.368.0",
     "markdown-wasm": "^1.2.0",
     "next": "^13.5.0",
     "next-contentlayer": "^0.3.4",
