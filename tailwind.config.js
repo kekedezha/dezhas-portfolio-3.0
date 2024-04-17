@@ -38,10 +38,10 @@ module.exports = {
 			},
 			animation: {
 				"fade-in": "fade-in 5s ease-in-out forwards",
-				title: "title 10s ease-out forwards",
+				title: "title 8s ease-out forwards",
 				"fade-left": "fade-left 5s ease-in-out forwards",
 				"fade-right": "fade-right 5s ease-in-out forwards",
-				"fade-out": "fade-out 4s ease-out forwards"
+				"fade-out": "fade-out 3s ease-out forwards"
 			},
 			keyframes: {
 				"fade-in": {

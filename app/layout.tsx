@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "../global.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('http://localhost:3000'), //will need to update this to website url once obtained
   title: {
     default: "christiandezha.com",
     template: "%s | christiandezha.com"
