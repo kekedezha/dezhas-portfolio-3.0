@@ -3,21 +3,134 @@
 import Image from 'next/image';
 import { BlogLink } from '../components/bloglink';
 import { Navigation } from "../components/nav";
+import MtnRunna from '../../public/Mtn_Runna.jpeg';
+import PitStop from '../../public/Pit_Stop.jpeg';
+import Acadia from '../../public/Acadia.jpeg';
+import Dead from '../../public/Dead.jpeg';
+import Workout241 from '../../public/24-1.jpeg';
+import Coffee_Pastries from '../../public/Coffee&Pastries.jpeg';
 
+function Badge(props:any) {
+    return (
+      <a
+        {...props}
+        target="_blank"
+        className="inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-lg leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+      />
+    );
+  }
 
 export default function About() {
     return (
-        <div className=" bg-gradient-to-tl from-zinc-800/0 via-zinc-800 to-zinc-800/0">
+        <div className="bg-gradient-to-tl from-zinc-800/0 via-zinc-800 to-zinc-800/0 px-80 pb-40 pt-20 flex flex-col md:flex-row mx-0 lg:mx-0">
             <Navigation />
-            <div className="container flex-column items-center justify-center min-h-screen px-4 mx-auto pt-20">
-                <h1 className="prose prose-neutral dark:prose-invert text-2xl font-medium tracking-tighter">
-                Ayoo, I&#39;m Christian Dezha 👋
+            <div className="text-center min-w-0 mt-6 flex flex-auto flex-col justify-center md:px-0">
+                <h1 className="w-full text-slate-200 text-3xl font-medium mb-5">
+                    Ayoo, I&#39;m Christian Dezha-Bolteada ✌🏽
                 </h1>
+                <p className="text-lg text-slate-300 w-full">
+                    I am aspiring software engineer based out of Charlotte, North Carolina, 
+                    with about a year of experience specializing in full-stack development
+                    and 4 years specializing in controls & automation as a systems engineer. 
+                    I thrive in problem solving, crafting up robust solutions using 
+                    technologies like:  
+                </p>
+                <ul className='flex justify-center my-6 md:space-x-4'>
+                    <li>
+                        <Badge href="https://ecma-international.org/publications-and-standards/standards/ecma-262/">
+                            <Image
+                                alt="JavaScript logomark"
+                                src="/js.png"
+                                className="!mr-1"
+                                width="16"
+                                height="16"
+                            />
+                            JavaScript
+                        </Badge>
+                    </li>
+                    <li>
+                        <Badge href="https://www.typescriptlang.org/">
+                            <Image
+                                alt="TypeScript logomark"
+                                src="/typescript.png"
+                                className="!mr-1"
+                                width="16"
+                                height="16"
+                            />
+                            TypeScript
+                        </Badge>
+                    </li>
+                    <li>
+                        <Badge href="https://nextjs.org">
+                            <Image
+                                alt="Next.js logomark"
+                                src="/next-logo.svg"
+                                className="!mr-1"
+                                width="16"
+                                height="16"
+                            />
+                            Next.js
+                        </Badge>
+                    </li>
+                    <li>
+                        <Badge href="https://nodejs.org/en/">
+                            <Image
+                                alt="Node.js logomark"
+                                src="/programing.png"
+                                className="!mr-1"
+                                width="16"
+                                height="16"
+                            />
+                            Node.js
+                        </Badge>
+                    </li>
+                    <li>
+                        <Badge href="https://expressjs.com/">
+                            <Image
+                                alt="Express.js logomark"
+                                src="/express.png"
+                                className="!mr-1"
+                                width="16"
+                                height="16"
+                            />
+                            Express.js
+                        </Badge>
+                    </li>
+                    <li>
+                        <Badge href="https://www.python.org/">
+                            <Image
+                                alt="Python logomark"
+                                src="/python.png"
+                                className="!mr-1"
+                                width="16"
+                                height="16"
+                            />
+                            Python
+                        </Badge>
+                    </li>
+                    <li>
+                        <Badge href="https://www.djangoproject.com/">
+                            <Image
+                                alt="Django logomark"
+                                src="/django.png"
+                                className="!mr-1"
+                                width="16"
+                                height="16"
+                            />
+                            Django
+                        </Badge>
+                    </li>
+                </ul>
+                <p className="text-lg text-slate-300 w-full">
+                    What excites me the most about software 
+                    engineering is the never endless road of learning, solving complex 
+                    problems and innovating scalable solutions.
+                </p>
                 <div className="my-8 columns-2 gap-4 sm:columns-3">
                     <div className="relative mb-4 h-40">
                         <Image
-                        alt="Me speaking on stage at React Summit about the future of Next.js"
-                        src={''}
+                        alt="Laying down on the floor after a brutal workout known as 24.1"
+                        src={Dead}
                         fill
                         sizes="(max-width: 768px) 213px, 33vw"
                         priority
@@ -26,8 +139,8 @@ export default function About() {
                     </div>
                     <div className="relative mb-4 h-80 sm:mb-0">
                         <Image
-                        alt="Me, Lydia, and Delba filming the Next.js Conf keynote"
-                        src={''}
+                        alt="Arriving at aid-station #3 at my first ultra marathon"
+                        src={PitStop}
                         fill
                         sizes="(max-width: 768px) 213px, 33vw"
                         priority
@@ -36,38 +149,38 @@ export default function About() {
                     </div>
                     <div className="relative h-40 sm:mb-4 sm:h-80">
                         <Image
-                        alt="Me standing on stage at Reactathon delivering the keynote"
-                        src={''}
+                        alt="Me sitting in front of a sign for Acadia National Park"
+                        src={Acadia}
                         fill
                         sizes="(max-width: 768px) 213px, 33vw"
                         priority
-                        className="rounded-lg object-cover object-top sm:object-center"
+                        className="rounded-lg object-cover sm:object-center"
                         />
                     </div>
                     <div className="relative mb-4 h-40 sm:mb-0">
                         <Image
-                        alt="Me standing on stage at SmashingConf giving a talk about my optimism for the web"
-                        src={''}
+                        alt="The way to my heart. Coffee and pastries."
+                        src={Coffee_Pastries}
                         fill
                         sizes="(max-width: 768px) 213px, 33vw"
                         priority
-                        className="rounded-lg object-cover"
+                        className="rounded-lg object-cover object-bottom"
                         />
                     </div>
                     <div className="relative mb-4 h-40">
                         <Image
-                        alt="Me and Guillermo Rauch on stage for Vercel Ship, answering questions from the Next.js community"
-                        src={''}
+                        alt="Me running through the Canadian mountains"
+                        src={MtnRunna}
                         fill
                         sizes="(max-width: 768px) 213px, 33vw"
                         priority
-                        className="rounded-lg object-cover"
+                        className="rounded-lg object-cover object-bottom"
                         />
                     </div>
                     <div className="relative h-80">
                         <Image
-                        alt="My badge on top of a pile of badges from a Vercel meetup we held"
-                        src={''}
+                        alt="Me waiting for the countdown timer to hit zero to start my workout"
+                        src={Workout241}
                         fill
                         sizes="(min-width: 768px) 213px, 33vw"
                         priority
@@ -75,75 +188,25 @@ export default function About() {
                         />
                     </div>
                 </div>
-                <div className="prose prose-neutral dark:prose-invert">
+                <div className="text-lg text-slate-300 w-full">
                     <p>
-                        I create educational content for developers, teaching them about web
-                        development, JavaScript and TypeScript, React and Next.js, and more.
-                        This comes in all forms: blog posts, videos, tweets, conference talks,
-                        and workshops. You can watch some of my favorites below.
+                     Recently, I have enjoyed developing my web-app, GIFTFaiRY🧚🏻, using the React and Django frameworks. The project has helped me to 
+                     accelerate my learning for both Front-End and Back-End Development! 
+                     My collaborative approach and strong communication skills enable me to work effectively in cross-functional teams. 
                     </p>
                 </div>
-                <div className="prose prose-neutral dark:prose-invert">
+                <div className="text-lg text-slate-300 w-full">
                     <p>
-                        Over the past decade, I&#39;ve written content on my blog and newsletter.
-                        I try to keep things simple. You&#39;ll find writing about technologies
-                        I&#39;m interested in at the time, or how I&#39;m learning and growing in my
-                        career, sharing knowledge along the way.
+                     Outside of coding, I enjoy 
+                     trail running, pushing my bodies limits doing functional fitness, exploring new eats and coffee shops, all which fuels my creativity and perspective
+                     while keeping me sane. Looking ahead, I'm eager to continue honing my skills and contributing to impactful projects that push the boundaries of technology.
                     </p>
                 </div>
                 <div className="my-8 flex w-full flex-col space-y-4">
+                    <p>✨FUN FACTS: </p>
                     <BlogLink name="What Makes A Great Developer Experience?" slug="developer-experience"/>
                     <BlogLink name="What is Developer Relations?" slug="devrel" />
                     <BlogLink name="The Story of Heroku" slug="heroku" />
-                </div>
-                <div className="prose prose-neutral dark:prose-invert">
-                    <p>
-                        I invest small angel checks into early stage startups building tools
-                        for developers.
-                    </p>
-                </div>
-                <div className="my-8 flex h-14 w-full flex-row space-x-2 overflow-x-auto">
-                    <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-                        <a href="https://linear.app">
-                        <svg width="78" height="20" role="img" aria-label="Linear logo">
-                            <use href="/sprite.svg#linear" />
-                        </svg>
-                        </a>
-                    </div>
-                    <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-                        <a href="https://supabase.com">
-                        <svg width="100" height="19" role="img" aria-label="Supabase logo">
-                            <use href="/sprite.svg#supabase" />
-                        </svg>
-                        </a>
-                    </div>
-                    <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-                        <a href="https://www.makeswift.com/blog/makeswift-is-joining-bigcommerce">
-                        <svg width="96" height="19" role="img" aria-label="Makeswift logo">
-                            <use href="/sprite.svg#makeswift" />
-                        </svg>
-                        </a>
-                    </div>
-                    <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-                        <a href="https://resend.com">
-                        <svg width="70" height="17" role="img" aria-label="Resend logo">
-                            <use href="/sprite.svg#resend" />
-                        </svg>
-                        </a>
-                    </div>
-                    <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-                        <a href="https://bun.sh">
-                        <svg width="35" height="27" role="img" aria-label="Bun logo">
-                            <use href="/sprite.svg#bun" />
-                        </svg>
-                        </a>
-                    </div>
-                </div>
-                <div className="prose prose-neutral dark:prose-invert">
-                    <p>
-                        I&#39;ve worked with and advised companies on{' '},{' '}, building
-                        open-source communities, product-led growth, and more.
-                    </p>
                 </div>
                 <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
                     <li>
