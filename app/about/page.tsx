@@ -188,48 +188,30 @@ export default function About() {
                         />
                     </div>
                 </div>
-                <div className="text-lg text-slate-300 w-full">
+                <div className="text-lg text-slate-300 w-full mb-2">
                     <p>
                      Recently, I have enjoyed developing my web-app, GIFTFaiRY🧚🏻, using the React and Django frameworks. The project has helped me to 
                      accelerate my learning for both Front-End and Back-End Development! 
                      My collaborative approach and strong communication skills enable me to work effectively in cross-functional teams. 
                     </p>
                 </div>
-                <div className="text-lg text-slate-300 w-full">
+                <div className="text-lg text-slate-300 w-full mb-2">
                     <p>
                      Outside of coding, I enjoy 
-                     trail running, pushing my bodies limits doing functional fitness, exploring new eats and coffee shops, all which fuels my creativity and perspective
-                     while keeping me sane. Looking ahead, I'm eager to continue honing my skills and contributing to impactful projects that push the boundaries of technology.
+                     trail running, pushing my body&#39;s limits doing functional fitness, exploring new eats and coffee shops, all which fuels my creativity and perspective
+                     while keeping me sane. Looking ahead, I&#39;m eager to continue honing my skills and contributing to impactful projects that push the boundaries of technology.
                     </p>
                 </div>
                 <div className="my-8 flex w-full flex-col space-y-4">
-                    <p>✨FUN FACTS: </p>
-                    <BlogLink name="What Makes A Great Developer Experience?" slug="developer-experience"/>
-                    <BlogLink name="What is Developer Relations?" slug="devrel" />
-                    <BlogLink name="The Story of Heroku" slug="heroku" />
+                    <p className='text-left text-slate-300 text-xl'>✨FUN FACTS: </p>
+                    <BlogLink name="I started off in CS in college, eventually switching to Applied Physics to pursue a more hands-on degree once
+                    I got to grad school. Fast forward a couple years later and what do you know...back in CS" 
+                    slug="https://physics.appstate.edu/academics/graduate-programs" timer={false}/>
+                    <BlogLink name="I got to visit Easter Island in 2020, a week or two before everything in the world shutdown." 
+                    slug="https://www.chile.travel/en/where-to-go/macrozone/rapa-nui/" timer={false}/>
+                    <BlogLink name={`After only running one 5K and three 10Ks, I signed up to run my first Ultra Marathon in 2023 (oh and I only 
+                        had less than two months to train for it).`} slug="https://www.runbumtours.com/graysonhighlands" timer={true}/>
                 </div>
-                <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-                    <li>
-                        <a
-                        className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        href="https://twitter.com/leeerob"
-                        >
-                        <p className="ml-2 h-7">follow me</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                        className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        href="https://leerob.substack.com"
-                        >
-                        <p className="ml-2 h-7">get email updates</p>
-                        </a>
-                    </li>
-                </ul>
         </div>
     </div>
     )
