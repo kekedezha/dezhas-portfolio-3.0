@@ -28,7 +28,7 @@ export default function About() {
                 <h1 className="w-full text-slate-200 text-3xl font-medium mb-5">
                     Ayoo, I&#39;m Christian Dezha-Bolteada ✌🏽
                 </h1>
-                <p className="text-lg text-slate-300 w-full">
+                <p className="text-lg text-neutral-400 w-full">
                     I am aspiring software engineer based out of Charlotte, North Carolina, 
                     with about a year of experience specializing in full-stack development
                     and 4 years specializing in controls & automation as a systems engineer. 
@@ -121,10 +121,11 @@ export default function About() {
                         </Badge>
                     </li>
                 </ul>
-                <p className="text-lg text-slate-300 w-full">
+                <p className="text-lg text-neutral-400 w-full">
                     What excites me the most about software 
                     engineering is the never endless road of learning, solving complex 
                     problems and innovating scalable solutions.
+                    My collaborative approach and strong communication skills enable me to work effectively in cross-functional teams.
                 </p>
                 <div className="my-8 columns-2 gap-4 sm:columns-3">
                     <div className="relative mb-4 h-40">
@@ -188,14 +189,13 @@ export default function About() {
                         />
                     </div>
                 </div>
-                <div className="text-lg text-slate-300 w-full mb-2">
+                <div className="text-lg text-neutral-400 w-full mb-4">
                     <p>
                      Recently, I have enjoyed developing my web-app, GIFTFaiRY🧚🏻, using the React and Django frameworks. The project has helped me to 
-                     accelerate my learning for both Front-End and Back-End Development! 
-                     My collaborative approach and strong communication skills enable me to work effectively in cross-functional teams. 
+                     accelerate my learning for both Front-End and Back-End Development!  
                     </p>
                 </div>
-                <div className="text-lg text-slate-300 w-full mb-2">
+                <div className="text-lg text-neutral-400 w-full mb-2">
                     <p>
                      Outside of coding, I enjoy 
                      trail running, pushing my body&#39;s limits doing functional fitness, exploring new eats and coffee shops, all which fuels my creativity and perspective
@@ -203,9 +203,9 @@ export default function About() {
                     </p>
                 </div>
                 <div className="my-8 flex w-full flex-col space-y-4">
-                    <p className='text-left text-slate-300 text-xl'>✨FUN FACTS: </p>
+                    <p className='text-left text-neutral-400 text-xl'>✨FUN FACTS: </p>
                     <BlogLink name="I started off in CS in college, eventually switching to Applied Physics to pursue a more hands-on degree once
-                    I got to grad school. Fast forward a couple years later and what do you know...back in CS" 
+                    I got to grad school. Fast forward a couple years later and what do you know... I&#39;m back in CS." 
                     slug="https://physics.appstate.edu/academics/graduate-programs" timer={false}/>
                     <BlogLink name="I got to visit Easter Island in 2020, a week or two before everything in the world shutdown." 
                     slug="https://www.chile.travel/en/where-to-go/macrozone/rapa-nui/" timer={false}/>
