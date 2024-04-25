@@ -32,8 +32,8 @@ export default function About() {
                     I am aspiring software engineer based out of Charlotte, North Carolina, 
                     with about a year of experience specializing in full-stack development
                     and 4 years specializing in controls & automation as a systems engineer. 
-                    I thrive in problem solving, crafting up robust solutions using 
-                    technologies like:  
+                    I thrive in problem solving, crafting up robust solutions. My current tech 
+                    includes the following technologies:  
                 </p>
                 <ul className='flex justify-center my-6 md:space-x-4'>
                     <li>
@@ -94,30 +94,6 @@ export default function About() {
                                 height="16"
                             />
                             Express.js
-                        </Badge>
-                    </li>
-                    <li>
-                        <Badge href="https://www.python.org/">
-                            <Image
-                                alt="Python logomark"
-                                src="/python.png"
-                                className="!mr-1"
-                                width="16"
-                                height="16"
-                            />
-                            Python
-                        </Badge>
-                    </li>
-                    <li>
-                        <Badge href="https://www.djangoproject.com/">
-                            <Image
-                                alt="Django logomark"
-                                src="/django.png"
-                                className="!mr-1"
-                                width="16"
-                                height="16"
-                            />
-                            Django
                         </Badge>
                     </li>
                 </ul>

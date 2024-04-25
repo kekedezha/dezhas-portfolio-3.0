@@ -57,7 +57,7 @@ export default function WorkPage() {
             <p>
             Since I joined Vercel in 2020, Next.js active developers have grown
             1000%, now at ~900k. Next.js is now a top 10 software project on
-            GitHub with. It's used by Walmart, ChatGPT, Starbucks, Okta,
+            GitHub with. It&#39;s used by Walmart, ChatGPT, Starbucks, Okta,
             Datastax, Notion, and <a href="https://nextjs.org/showcase">more</a>.
             </p>
             <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
