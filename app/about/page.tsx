@@ -33,7 +33,7 @@ export default function About() {
                     with about a year of experience specializing in full-stack development
                     and 4 years specializing in controls & automation as a systems engineer. 
                     I thrive in problem solving, crafting up robust solutions. My current tech 
-                    includes the following technologies:  
+                    stack includes the following technologies:  
                 </p>
                 <ul className='flex justify-center my-6 md:space-x-4'>
                     <li>

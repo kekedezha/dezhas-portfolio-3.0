@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Navigation } from '../components/nav';
 
 export const metadata: Metadata = {
   title: 'Work',
@@ -8,60 +9,103 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <section>
-        <h1 className="font-medium text-2xl mb-8 tracking-tighter">my work</h1>
+    <div className="antialiased bg-gradient-to-tl from-zinc-800/0 via-zinc-800 to-zinc-800/0 px-80 pb-40 pt-20 flex flex-col justify-center md:flex-row mx-0 lg:mx-0">
+      <Navigation />
         <div className="prose prose-neutral dark:prose-invert">
+            <h1 className="font-medium text-2xl mb-8 tracking-tighter">my work</h1>
             <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
-            <h2 className="font-medium text-xl mb-1 tracking-tighter">Vercel</h2>
+            <h2 className="font-medium text-xl mb-1 tracking-tighter">RoviSys Building Technologies</h2>
             <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-            VP of Product
+            Systems Engineer I / II, Project Engineer, Project Manager <br/>
+            2019-2023 
+            <br/> 
+            <br/>
+            Technologies: Allen-Bradley PLCs, Rockwell Automation Software (FactoryTalk SE & FactoryTalk Historian SE), 
+            Inductive Automation Software (Ignition), Networking - Cisco Switches, Various Sensors and Equipment
             </p>
+            <p></p>
             <p>
-            I joined <a href="https://vercel.com/home">Vercel</a> early to grow{' '}
-            <a href="https://nextjs.org">Next.js</a> and our developer community.
-            I built our Developer Relations team to teach our community about our
-            products.
+            I joined <a href="https://www.rovisys.com/automation/building-automation/">RoviSys Building Technologies</a> 
+            , a systems integrator, where I worked on projects primary focused on mission-critical applications in 
+            the DataCenter realm both domestically and internationally.
+            </p>
+            <p></p>
+            <p>
+             <b>Systems Engineer I / II:</b> BMS Controls for Mission-Critical DataCenter Operations
             </p>
             <ul>
                 <li>
-                    In 2021, I was promoted to Director of DevRel. We{' '}
-                    <a href="https://twitter.com/kelseyhightower/status/1105985400110112768">
-                    translated customer pain
-                    </a>{' '}
-                    back into the product roadmap. We spoke at{' '}
-                    <Link href="/blog/nextjs-conf-2022-recap">conferences</Link>, wrote
-                    blog posts, and created videos. We built open-source examples and
-                    contributed back to the product.
+                    <b>PLC:</b> 
+                    <ul>
+                      <li>
+                      Expertise in Rockwell/Allen-Bradley PLC Programming
+                      </li>
+                      <li>
+                      Code development, configuration and optimization of
+                      PLC logic and control components
+                      </li>
+                      <li>
+                      Developed and Integrated UI/UX Systems using Rockwell FactoryTalk and Ignition to 
+                       visualize live data of equipment
+                      </li>
+                    </ul>  
                 </li>
                 <li>
-                    In 2022, I was promoted to VP of Developer Experience, now also
-                    leading our product documentation team. My team created a{' '}
-                    <a href="https://nextjs.org/learn">new free course</a> to teach
-                    Next.js, which had 17 million page views that year.{' '}
-                    <a href="https://twitter.com/leeerob/status/1608900031859527682">
-                    I shipped.
-                    </a>{' '}
-                    I partnered with our open-source community, collaborating with
-                    frameworks like{' '}
-                    <a href="https://vercel.com/docs/frameworks/nuxt">Nuxt</a> and{' '}
-                    <a href="https://astro.build/blog/vercel-official-hosting-partner/">
-                    Astro
-                    </a>{' '}
-                    and sponsoring individuals and projects.
+                    <b>Systems Integration:</b> 
+                    <ul>
+                      <li>
+                      Integrating automation technologies, sensors and equipment with PLC Systems in 
+                      Mission-Control environments
+                      </li>
+                      <li>
+                      Developed BMS Network Infrastructure 
+                      </li>
+                      <li>
+                      Ensuring smooth communications between various control systems for an integrated BMS solution
+                      </li>
+                    </ul>
+ 
                 </li>
                 <li>
-                    In 2023, I was promoted to VP of Product, now also leading Product
-                    Management.
+                    <b>Continuous Improvement:</b> 
+                    <ul>
+                      <li>
+                      Identifying problems and implementing solutions for process optimization and efficiency improvements
+                      </li>
+                      <li>
+                      Apart of client&#39;s Standards team monitoring code and automation process for continuous improvement
+                      </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Troubleshooting and Maintenance:</b> 
+                    <ul>
+                      <li>
+                      Diagnosed and resolved issues related to PLC systems automation technologies, sensors and 
+                      equipment, minimizing downtime and ensuring continuous operation
+                      </li>
+                      <li>
+                      Conducted regular maintenance activities to prevent system failures.
+                      </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Documentation:</b> 
+                    <ul>
+                      <li>
+                      Maintained accurate documentation for PLC programs, configurations, and system/network architecture
+                      </li>
+                      <li>
+                      Created user manuals and training materials to facilitate system understanding and operation
+                      </li>
+                    </ul>
                 </li>
             </ul>
             <p>
-            Since I joined Vercel in 2020, Next.js active developers have grown
-            1000%, now at ~900k. Next.js is now a top 10 software project on
-            GitHub with. It&#39;s used by Walmart, ChatGPT, Starbucks, Okta,
-            Datastax, Notion, and <a href="https://nextjs.org/showcase">more</a>.
+            <b>Project Engineer / Project Manager:</b> Filled in as Project Engineer and Project Manager across various projects for Mission Critical DataCenter Operations
             </p>
             <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         </div>
-    </section>
+    </div>
   );
 }
