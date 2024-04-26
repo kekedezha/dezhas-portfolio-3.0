@@ -31,7 +31,7 @@ export default function WorkPage() {
             </p>
             <p></p>
             <p>
-             <b>Systems Engineer I / II:</b> BMS Controls for Mission-Critical DataCenter Operations
+             <b>Systems Engineer I / II:</b> BMS Controls for mission-critical DataCenter Operations
             </p>
             <ul>
                 <li>
@@ -73,7 +73,7 @@ export default function WorkPage() {
                       Identifying problems and implementing solutions for process optimization and efficiency improvements
                       </li>
                       <li>
-                      Apart of client&#39;s Standards team monitoring code and automation process for continuous improvement
+                      Apart of client&#39;s Standards team, monitoring code and automation process for continuous improvement
                       </li>
                     </ul>
                 </li>
@@ -102,8 +102,26 @@ export default function WorkPage() {
                 </li>
             </ul>
             <p>
-            <b>Project Engineer / Project Manager:</b> Filled in as Project Engineer and Project Manager across various projects for Mission Critical DataCenter Operations
+            <b>Project Engineer / Project Manager:</b> Filled in as Project Engineer and Project Manager across various projects for mission-critical DataCenter Operations
             </p>
+            <ul>
+              <li>
+                Collaborated with clients domestically and at an international level
+              </li>
+              <li>
+                Provided scheduling to clients, updated on a weekly basis to ensure project organization and flow
+              </li>
+              <li>
+                Scheduled and coordinated meetings to address roadblocks and/or potential holdups
+              </li>
+              <li>
+                Communicated internally with teams and individuals on a daily basis to ensure project expectations being upheld 
+                and individual fulfillment on a professional level
+              </li>
+              <li>
+                Administered and assisted in project finances/forecasting to ensure and maximize profit
+              </li>
+            </ul>
             <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         </div>
     </div>

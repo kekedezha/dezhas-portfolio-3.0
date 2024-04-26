@@ -173,8 +173,8 @@ export default function About() {
                 </div>
                 <div className="text-lg text-neutral-400 w-full mb-2">
                     <p>
-                     Outside of coding, I enjoy 
-                     trail running, pushing my body&#39;s limits doing functional fitness, exploring new eats and coffee shops, all which fuels my creativity and perspective
+                     Outside of coding 💻, I enjoy 
+                     trail running 🏃🏽‍♂️, pushing my body&#39;s limits doing functional fitness 🏋🏽‍♂️, exploring new eats and coffee shops, all which fuels my creativity and perspective
                      while keeping me sane. Looking ahead, I&#39;m eager to continue honing my skills and contributing to impactful projects that push the boundaries of technology.
                     </p>
                 </div>
@@ -183,7 +183,7 @@ export default function About() {
                     <BlogLink name="I started off in CS in college, eventually switching to Applied Physics to pursue a more hands-on degree once
                     I got to grad school. Fast forward a couple years later and what do you know... I&#39;m back in CS." 
                     slug="https://physics.appstate.edu/academics/graduate-programs" timer={false}/>
-                    <BlogLink name="I got to visit Easter Island in 2020, a week or two before everything in the world shutdown." 
+                    <BlogLink name="I got to visit Easter Island in 2020 🗿, a week or two before everything in the world shutdown 🦠." 
                     slug="https://www.chile.travel/en/where-to-go/macrozone/rapa-nui/" timer={false}/>
                     <BlogLink name={`After only running one 5K and three 10Ks, I signed up to run my first Ultra Marathon in 2023 (oh and I only 
                         had less than two months to train for it).`} slug="https://www.runbumtours.com/graysonhighlands" timer={true}/>
