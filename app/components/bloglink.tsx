@@ -21,6 +21,7 @@ export const BlogLink: React.FC<BlogLinkProps> = ({ slug, name, timer }) => {
   const _hour:number = _mins * 60;
   const _day:number = _hour * 24;
 
+  //setInterval function for the countdown timer 
   setInterval(() => {
     const now: Date = new Date();
     const difference: number = (RACE_DAY_DATE.getTime() - now.getTime());
