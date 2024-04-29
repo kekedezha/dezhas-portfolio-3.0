@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^14.2.1",
     "@next/mdx": "^14.2.1",
     "@upstash/redis": "^1.29.0",
     "contentlayer": "^0.3.4",
