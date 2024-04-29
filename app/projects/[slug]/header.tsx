@@ -3,27 +3,34 @@ import { ArrowLeft, Github } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
+//Define type alias for Props
 type Props = {
+	//Props of type project object:
+	//url: string (may or may not be present)
+	//repo: string (may or may not be present)
 	project: {
 		url?: string;
 		title: string;
 		description: string;
 		repository?: string;
 	};
-
-	views: number;
 };
-export const Header: React.FC<Props> = ({ project, views }) => {
+
+//Define Header component with explicit prop types, defined above
+export const Header: React.FC<Props> = ({ project }) => {
 	const ref = useRef<HTMLElement>(null);
 	const [isIntersecting, setIntersecting] = useState(true);
 
+	//create links array to contain object values containing a label and href
 	const links: { label: string; href: string }[] = [];
+	//if project object contains a value for repo then push to links array
 	if (project.repository) {
 		links.push({
 			label: "GitHub",
 			href: `https://github.com/${project.repository}`,
 		});
 	}
+	//if project object contains a value for url then push to links array
 	if (project.url) {
 		links.push({
 			label: "Website",
