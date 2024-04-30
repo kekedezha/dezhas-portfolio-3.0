@@ -1,0 +1,92 @@
+---
+title: Boss Machine
+description: A fictional Boss Machine that serves as a unique management application for today's most accomplished (evil) entrepreneurs.
+repository: kekedezha/boss-machine
+date: "2024-3-26"
+published: true
+---
+
+![boss machine landing page](/boss-machine.png)
+
+## Project Overview
+
+In this project, I created an entire API to serve information to a Boss Machine, a unique management application for today's most
+accomplished (evil) entrepreneurs. I created routes to manage 'minions', brilliant 'million dollar ideas', and to handle all the
+annoying meetings that keep getting added to a busy schedule.
+
+### API Routes
+
+- Routes live inside the **server** folder.
+- The 'database' exists in **server/db.js**. The beginning database will be seeded every time the server is restarted. There is more information on working with the database and the helper functions it exports below.
+
+#### Routes Required
+
+<ul>
+  <li>**/api/minions**</li>
+  <ul>
+    <li>GET /api/minions to get an array of all minions.</li>
+    <li>POST /api/minions to create a new minion and save it to the database.</li>
+    <li>GET /api/minions/:minionId to get a single minion by id.</li>
+    <li>PUT /api/minions/:minionId to update a single minion by id.</li>
+    <li>DELETE /api/minions/:minionId to delete a single minion by id.</li>
+    <li>GET /api/minions/:minionId/work to get an array of all work for the specified minion.</li>
+    <li>POST /api/minions/:minionId/work to create a new work object and save it to the database.</li>
+    <li>PUT /api/minions/:minionId/work/:workId to update a single work by id.</li>
+    <li>DELETE /api/minions/:minionId/work/:workId to delete a single work by id.</li>
+  </ul>
+
+{" "}
+
+<li>**/api/ideas**</li>
+<ul>
+  <li>GET /api/ideas to get an array of all ideas.</li>
+  <li>POST /api/ideas to create a new idea and save it to the database.</li>
+  <li>GET /api/ideas/:ideaId to get a single idea by id.</li>
+  <li>PUT /api/ideas/:ideaId to update a single idea by id.</li>
+  <li>DELETE /api/ideas/:ideaId to delete a single idea by id.</li>
+</ul>
+
+  <li>**/api/meetings**</li>
+  <ul>
+    <li>GET /api/meetings to get an array of all meetings.</li>
+    <li>POST /api/meetings to create a new meeting and save it to the database.</li>
+    <li>DELETE /api/meetings to delete _all_ meetings from the database.</li>
+  </ul>
+</ul>
+
+#### Schemas
+
+<ul>
+  <li>**Minion:**</li>
+  <ul>
+    <li>id: string</li>
+    <li>name: string</li>
+    <li>title: string</li>
+    <li>salary: number</li>
+    <li>**Work:**</li>
+    <ul>
+      <li>id: string</li>
+      <li>title: string</li>
+      <li>description: string</li>
+      <li>hours: number</li>
+      <li>minionId: string</li>
+    </ul>
+  </ul>
+
+<li>**Ideas:**</li>
+<ul>
+  <li>id: string</li>
+  <li>name: string</li>
+  <li>description: string</li>
+  <li>numWeeks: number</li>
+  <li>weeklyRevenue: number</li>
+</ul>
+
+  <li>**Meetings:**</li>
+  <ul>
+    <li>time: string</li>
+    <li>date: JS 'Date' object</li>
+    <li>day: string</li>
+    <li>note: string</li>
+  </ul>
+</ul>
