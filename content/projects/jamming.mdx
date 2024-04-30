@@ -1,0 +1,30 @@
+---
+title: Jamming
+description: Just another web-app that uses Spotify's API to link a user account, search songs, preview songs, make anew playlist and upload the playlist to the linked user account.
+repository: kekedezha/jamming_pp
+date: "2023-12-15"
+published: true
+---
+
+![Jamming main page](/jamming_preview.png)
+
+# Jamming 🎧 w/Spotify
+
+Another web-app that uses Spotify's API to link to a user account, search songs, preview songs, make a new playlist and upload the playlist to the linked user account.
+
+## 💻 Motivation
+
+This web-app is not meant to replace any other Spotify web-app, rather this web app was done to further enhance my understand of interacting with APIs by using Spotify's API to link a user to their Spotify account, search songs, preview songs, make a playlist in the web-app and then upload the newly made playlist to the linked account.
+
+## ⚡️ Technologies
+
+- React.js
+- Javascript
+- HTML
+- CSS
+- Spotify API Integration
+
+## 🛠️ Improvements
+
+Use a different type of OAuth2.0 Grant Type for user's to sign in via Authorization code with PKCE extension. The authorization code flow with PKCE is the recommended authorization flow for mobile apps, single-page web apps, or any type of application where the client secret can't be safely stored.
+Currently app is being using the Implicit Grant which is deprecated and is not super safe for authenticating users to their account.
