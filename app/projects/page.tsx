@@ -6,8 +6,15 @@ import { Card } from "../components/card";
 import { Article } from "./article";
 import { Redis } from "@upstash/redis";
 import { Eye } from "lucide-react";
+import { FaHtml5, FaCss3Alt, FaReact, FaChrome, FaTerminal, FaNpm, FaNode, FaGithub, FaJava, FaPython, FaBootstrap, FaSwift } from "react-icons/fa";
+import { IoLogoJavascript, IoLogoFirebase } from "react-icons/io5";
+import { FaGit } from "react-icons/fa6";
+import { SiTypescript, SiTailwindcss, SiRedux, SiExpress } from "react-icons/si";
+import { AiOutlineOpenAI } from "react-icons/ai";
+import { DiDjango, DiPostgresql } from "react-icons/di";
 
 const redis = Redis.fromEnv();
+const style = { color: "white", fontSize: "2.5em" }
 
 export const revalidate = 60;
 export default async function ProjectsPage() {
@@ -37,16 +44,12 @@ export default async function ProjectsPage() {
     <div className="relative pb-16">
       <Navigation />
       <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-        <div className="max-w-2xl mx-auto lg:mx-0">
+        <div className="max-w-2xl mt-auto lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-            Projects
+            Projects & Skills
           </h2>
-          <h3 className="mt-4 text-zinc-400">
-            Skills
-          </h3>
         </div>
         <div className="w-full h-px bg-zinc-800" />
-
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
           <Card>
             <Link href={`/projects/${featured.slug}`}>
@@ -127,6 +130,37 @@ export default async function ProjectsPage() {
                   <Article project={project}  views={views[project.slug] ?? 0} /> 
                 </Card>
               ))}
+          </div>
+        </div>
+        <div className="w-full h-px bg-zinc-800" />
+        <div className="flex flex-col justify-center !mx-1">
+          <div className="flex items-center justify-evenly mb-8">
+            <FaHtml5 style={style} />
+            <FaCss3Alt style={style} />
+            <IoLogoJavascript style={style} />
+            <SiTypescript style={style} />
+            <FaReact style={style} />
+            <FaGit style={style} />
+          </div>
+          <div className="flex items-center justify-evenly mb-8">
+            <FaChrome style={style} />
+            <FaTerminal style={style} />
+            <FaNpm style={style} />
+            <FaNode style={style} />
+            <FaGithub style={style} />
+            <FaJava style={style} />
+            <FaPython style={style} />
+            <IoLogoFirebase style={style} />
+          </div>
+          <div className="flex items-center justify-evenly">
+            <FaBootstrap style={style} />
+            {/* <AiOutlineOpenAI style={style} /> */}
+            <DiDjango style={style} />
+            <DiPostgresql style={style} />
+            <SiRedux style={style} />
+            <SiTailwindcss style={style} />
+            <SiExpress style={style} />
+            <FaSwift style={style} />
           </div>
         </div>
       </div>

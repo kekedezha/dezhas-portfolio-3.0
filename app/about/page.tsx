@@ -30,9 +30,9 @@ export default function About() {
                 </h1>
                 <p className="text-lg text-neutral-400 w-full">
                     I am aspiring software engineer based out of Charlotte, North Carolina, 
-                    with about a year of experience specializing in full-stack development
+                    with a year of experience specializing in full-stack development
                     and 4 years specializing in controls & automation as a systems engineer. 
-                    I thrive in problem solving, crafting up robust solutions. My current tech 
+                    I thrive in problem solving and crafting up robust solutions. My current tech 
                     stack includes the following technologies:  
                 </p>
                 <ul className='flex justify-center my-6 md:space-x-4'>
@@ -99,7 +99,7 @@ export default function About() {
                 </ul>
                 <p className="text-lg text-neutral-400 w-full">
                     What excites me the most about software 
-                    engineering is the never endless road of learning, solving complex 
+                    engineering is the never ending road of learning, solving complex 
                     problems and innovating scalable solutions.
                     My collaborative approach and strong communication skills enable me to work effectively in cross-functional teams.
                 </p>
@@ -167,7 +167,7 @@ export default function About() {
                 </div>
                 <div className="text-lg text-neutral-400 w-full mb-4">
                     <p>
-                     Recently, I have enjoyed developing my web-app, GIFTFaiRY🧚🏻, using the React and Django frameworks. The project has helped me to 
+                     Recently, I have enjoyed developing my web-app, <a className="underline text-blue-400"href="https://aigiftfairy.com" target='_blank'>GIFTFaiRY🧚🏻</a>, using the React and Django frameworks. The project has helped me to 
                      accelerate my learning for both Front-End and Back-End Development!  
                     </p>
                 </div>
