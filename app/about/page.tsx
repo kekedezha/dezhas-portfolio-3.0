@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { BlogLink } from '../components/bloglink';
 import { Navigation } from "../components/nav";
+
+// Import pictures 
 import MtnRunna from '../../public/Mtn_Runna.jpeg';
 import PitStop from '../../public/Pit_Stop.jpeg';
 import Acadia from '../../public/Acadia.jpeg';

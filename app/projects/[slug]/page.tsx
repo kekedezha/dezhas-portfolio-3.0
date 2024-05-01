@@ -6,16 +6,20 @@ import "./mdx.css";
 import { ReportView } from "./view";
 import { Redis } from "@upstash/redis";
 
+// Set revalidation time
 export const revalidate = 60;
 
+// Declare type alias for Props - of params object containing slug property
 type Props = {
   params: {
     slug: string;
   };
 };
 
+// Create Redis instance using your environment variables that should be your REST_URL and REST_TOKEN for the db you created on upstash 
 const redis = Redis.fromEnv();
 
+//export generateStaticParams function that will return a promise containing an array of slugs all projects that have been published and 
 export async function generateStaticParams(): Promise<Props["params"][]> {
   return allProjects
     .filter((p) => p.published)
@@ -24,10 +28,14 @@ export async function generateStaticParams(): Promise<Props["params"][]> {
     }));
 }
 
+
 export default async function PostPage({ params }: Props) {
+  // Set slug to params property slug...though may or may not have one
   const slug = params?.slug;
+  // Set project to be displayed. 
   const project = allProjects.find((project) => project.slug === slug);
 
+  // If no project then display 404 not found. 
   if (!project) {
     notFound();
   }

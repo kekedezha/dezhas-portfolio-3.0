@@ -4,7 +4,9 @@ import { allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
-import { Redis } from "@upstash/redis";
+import { Redis } from "@upstash/redis"; //Import HTTP/REST based Redis database client
+
+//Import icons to be used
 import { Eye } from "lucide-react";
 import { FaHtml5, FaCss3Alt, FaReact, FaTerminal, FaNpm, FaNode, FaGithub, FaJava, FaPython, FaBootstrap, FaSwift } from "react-icons/fa";
 import { IoLogoJavascript, IoLogoFirebase } from "react-icons/io5";
@@ -12,27 +14,35 @@ import { FaGit } from "react-icons/fa6";
 import { SiTypescript, SiTailwindcss, SiRedux, SiExpress, SiOpenai, SiNextdotjs } from "react-icons/si";
 import { DiDjango, DiPostgresql } from "react-icons/di";
 
+// Create Redis instance using your environment variables that should be your REST_URL and REST_TOKEN for the db you created on upstash 
 const redis = Redis.fromEnv();
+
+// Style to be passed in as prop for react-icons library
 const style = { color: "white", fontSize: "2.5em" }
 
 export const revalidate = 60;
 export default async function ProjectsPage() {
+
   const views = (
     await redis.mget<number[]>(
-      ...allProjects.map((p) => ["pageviews", "projects", p.slug].join(":")),
+      ...allProjects.map((p) => ["pageviews", "projects", p.slug].join(":")), // Use mget to get an array of 'views' page for each key in the db
     )
   ).reduce((acc, v, i) => {
     acc[allProjects[i].slug] = v ?? 0;
     return acc;
-  }, {} as Record<string, number>);
+  }, {} as Record<string, number>); // Reduce the array of views into an object as {allProjects[i].slug: string, views: number}
 
+
+  // Featured projects - giftfAIry
   const featured = allProjects.find((project) => project.slug === "giftfairy")!;
+
+  // Sort the rest of the projects, not including the featured. 
   const sorted = allProjects
-    .filter((p) => p.published)
+    .filter((p) => p.published) // Show projects that have published key = true
     .filter(
       (project) =>
-        project.slug !== featured.slug
-    )
+        project.slug !== featured.slug //Filter out featured project.
+    ) 
     .sort(
       (a, b) =>
         new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
@@ -158,7 +168,7 @@ export default async function ProjectsPage() {
             <DiPostgresql style={style} title="PostgreSQL" />
             <SiRedux style={style} title="Redux" />
             <SiTailwindcss style={style} title="Tailwind CSS" />
-            <SiExpress style={style} title="Express" />
+            <SiExpress style={style} title="Express.js" />
             <FaSwift style={style} title="Swift" />
           </div>
         </div>

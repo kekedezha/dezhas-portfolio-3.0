@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 
 export const ReportView: React.FC<{ slug: string }> = ({ slug }) => {
+	//Send a POST request every time a selects a project to view in order to increment page count
 	useEffect(() => {
 		fetch("/api/incr", {
 			method: "POST",
