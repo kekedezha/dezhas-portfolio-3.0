@@ -4,7 +4,7 @@ Check out my new portfolio! 1st attempt was using CSS and HTMl and less than a h
 
 ## Motivation
 
-Thought my portfolio could use a makeover and it seems like a pretty small project to begin using Next.js. I believe that with even this slight makeover, it can draw more attention to myself and better display my skills and progress through a nice and clean UI. This inspiration was taken from [chronark.com](https://chronark.com/) as this was an example from the [Next.js](https://nextjs.org/) website. 
+Thought my portfolio could use a makeover and it seems like a pretty small project to begin using Next.js. I believe that with even this slight makeover, it can draw more attention to myself and better display my skills and progress through a nice and clean UI. This inspiration was taken from some portfolio examples from the [Next.js](https://nextjs.org/) website. 
 
 ## Main Technologies ⚡️
 
