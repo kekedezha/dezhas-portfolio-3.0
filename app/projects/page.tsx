@@ -6,11 +6,10 @@ import { Card } from "../components/card";
 import { Article } from "./article";
 import { Redis } from "@upstash/redis";
 import { Eye } from "lucide-react";
-import { FaHtml5, FaCss3Alt, FaReact, FaChrome, FaTerminal, FaNpm, FaNode, FaGithub, FaJava, FaPython, FaBootstrap, FaSwift } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaReact, FaTerminal, FaNpm, FaNode, FaGithub, FaJava, FaPython, FaBootstrap, FaSwift } from "react-icons/fa";
 import { IoLogoJavascript, IoLogoFirebase } from "react-icons/io5";
 import { FaGit } from "react-icons/fa6";
-import { SiTypescript, SiTailwindcss, SiRedux, SiExpress } from "react-icons/si";
-import { AiOutlineOpenAI } from "react-icons/ai";
+import { SiTypescript, SiTailwindcss, SiRedux, SiExpress, SiOpenai, SiNextdotjs } from "react-icons/si";
 import { DiDjango, DiPostgresql } from "react-icons/di";
 
 const redis = Redis.fromEnv();
@@ -135,32 +134,32 @@ export default async function ProjectsPage() {
         <div className="w-full h-px bg-zinc-800" />
         <div className="flex flex-col justify-center !mx-1">
           <div className="flex items-center justify-evenly mb-8">
-            <FaHtml5 style={style} />
-            <FaCss3Alt style={style} />
-            <IoLogoJavascript style={style} />
-            <SiTypescript style={style} />
-            <FaReact style={style} />
-            <FaGit style={style} />
+            <FaHtml5 style={style} title="HTML" />
+            <FaCss3Alt style={style} title="CSS" />
+            <IoLogoJavascript style={style} title="JavaScript" />
+            <SiTypescript style={style}title="TypeScript" />
+            <FaReact style={style} title="React" />
+            <FaGit style={style} title="Git" />
           </div>
           <div className="flex items-center justify-evenly mb-8">
-            <FaChrome style={style} />
-            <FaTerminal style={style} />
-            <FaNpm style={style} />
-            <FaNode style={style} />
-            <FaGithub style={style} />
-            <FaJava style={style} />
-            <FaPython style={style} />
-            <IoLogoFirebase style={style} />
+            <SiNextdotjs style={style} title="Next.js" />
+            <FaTerminal style={style} title="Terminal" />
+            <FaNpm style={style} title="NPM" />
+            <FaNode style={style} title="Node.js" />
+            <FaGithub style={style} title="Github" />
+            <FaJava style={style} title="Java" />
+            <FaPython style={style} title="Python" />
+            <IoLogoFirebase style={style} title="Firebase" />
+            <SiOpenai style={style} title="OpenAI" />
           </div>
           <div className="flex items-center justify-evenly">
-            <FaBootstrap style={style} />
-            {/* <AiOutlineOpenAI style={style} /> */}
-            <DiDjango style={style} />
-            <DiPostgresql style={style} />
-            <SiRedux style={style} />
-            <SiTailwindcss style={style} />
-            <SiExpress style={style} />
-            <FaSwift style={style} />
+            <FaBootstrap style={style} title="Bootstrap" />
+            <DiDjango style={style} title="Django" />
+            <DiPostgresql style={style} title="PostgreSQL" />
+            <SiRedux style={style} title="Redux" />
+            <SiTailwindcss style={style} title="Tailwind CSS" />
+            <SiExpress style={style} title="Express" />
+            <FaSwift style={style} title="Swift" />
           </div>
         </div>
       </div>
