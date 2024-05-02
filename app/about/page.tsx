@@ -17,7 +17,7 @@ function Badge(props:any) {
       <a
         {...props}
         target="_blank"
-        className="inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-lg leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+        className="inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-xs md:text-sm lg:text-lg leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
       />
     );
   }
@@ -31,7 +31,7 @@ export default function About() {
                     Ayoo, I&#39;m Christian Dezha-Bolteada ✌🏽
                 </h1>
                 <p className="text-lg text-neutral-400 w-full">
-                    I am aspiring software engineer based out of Charlotte, North Carolina, 
+                    I&#39;m an aspiring software engineer based out of Charlotte, North Carolina, 
                     with a year of experience specializing in full-stack development
                     and 4 years specializing in controls & automation as a systems engineer. 
                     I thrive in problem solving and crafting up robust solutions. My current tech 
