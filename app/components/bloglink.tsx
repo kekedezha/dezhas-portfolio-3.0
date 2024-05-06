@@ -46,7 +46,12 @@ export const BlogLink: React.FC<BlogLinkProps> = ({ slug, name, timer }) => {
             </p>
             {timer == true ? 
             <p className='text-lg font-medium text-neutral-900 dark:text-neutral-100 px-10 text-left'>
-              Countdown until my next Ultra Marathon (50M) at Grayson Highlands State Park: <br/> <span className='text-red-700'>{countdown}</span>
+              Countdown until my next Ultra Marathon (50M) at Grayson Highlands State Park: <br/>
+              {countdown?.includes('-') ? 
+                <span className='text-green-700'>Completed May 4th, 2024! 50 Miles, 9500 ft of climbing in 13hrs29mins 🎉</span>
+                :
+                <span className='text-red-700'>{countdown}</span>
+              }
             </p>
             :
             <></>}
