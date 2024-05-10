@@ -25,7 +25,7 @@ export default function WorkPage() {
             <p></p>
             <p>
             I joined <a href="https://www.rovisys.com/automation/building-automation/">RoviSys Building Technologies</a> 
-            , a systems integrator, where I worked on projects primary focused on mission-critical applications in 
+            , a systems integrator, right out of grad school where I worked on projects primary focused on mission-critical applications in 
             the DataCenter realm both domestically and internationally.
             </p>
             <p></p>
