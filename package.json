@@ -12,6 +12,7 @@
     "@next/mdx": "^14.2.1",
     "@upstash/redis": "^1.29.0",
     "contentlayer": "^0.3.4",
+    "embla-carousel": "^8.0.4",
     "framer-motion": "^11.0.28",
     "lucide-react": "^0.376.0",
     "markdown-wasm": "^1.2.0",
