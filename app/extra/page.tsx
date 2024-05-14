@@ -37,7 +37,7 @@ export default function ExtrasPage() {
     setInterval(() => {
         const now: number = Date.now();
         setCurrentTime(now);
-    }, 1000);
+    }, 1500);
 
     
     setTimeout(() => {
