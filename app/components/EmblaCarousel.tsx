@@ -23,6 +23,7 @@ const dateOptions: Intl.DateTimeFormatOptions = {
   hour: "2-digit",
   minute: "2-digit",
   hourCycle: "h12",
+  timeZone: "UTC",
 }
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
@@ -83,15 +84,21 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               <div className="embla__slide__number text-center flex flex-col justify-center">
                 { strava ? (
                   <div className="embla__slide__number text-center flex flex-col justify-center">
-                    <p className="text-base text-zinc-300 w-full tracking-tighter">
+                    <p className="text-base text-zinc-300 w-full tracking-tighter underline">
                       {slide.name}
                     </p>
                     <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
                       Distance: {(slide.distance * 0.000621371).toFixed(2)} miles
                     </p>
-                    <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
-                      Time: {slide.elapsed_time / 60} minutes
-                    </p>
+                    {slide.distance > 35000 ? 
+                      <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
+                        Time: {Math.floor((slide.elapsed_time/60)/60)} hours {Math.floor((slide.elapsed_time/60))%60} mins
+                      </p>
+                    :
+                      <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
+                        Time: {Math.floor((slide.moving_time/60)/60)} hours {Math.floor((slide.moving_time/60))%60} mins {Math.floor(slide.moving_time)%60} seconds
+                      </p>
+                    }
                     <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
                       Activity: {slide.sport_type}
                     </p>
