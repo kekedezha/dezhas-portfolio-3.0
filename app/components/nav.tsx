@@ -4,11 +4,12 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 const navigation = [
-	{ name: "About", href: "/about"}, 
-	{ name: "Projects", href: "/projects" },
-	{ name: "Work", href: "/work"},
-	{ name: "Contact", href: "/contact" },
-	{ name: "Extra", href: "/extra"},
+	{ name: "About", href: "/about", target: "_self"}, 
+	{ name: "Projects", href: "/projects", target: "_self"},
+	{ name: "Work", href: "/work", target: "_self"},
+	{ name: "Contact", href: "/contact", target: "_self"},
+	{ name: "Extra", href: "/extra", target: "_self"},
+	{ name: "Resume", href: "https://docsend.com/view/fsr5p5grhd58phqw", target: "_blank"},
   ];
 
 export const Navigation: React.FC = () => {
@@ -40,6 +41,7 @@ export const Navigation: React.FC = () => {
 							<Link
 							key={item.href}
 							href={item.href}
+							target={item.target}
 							className="duration-200 text-base text-zinc-400 hover:text-zinc-100"
 						>
 							{item.name}
