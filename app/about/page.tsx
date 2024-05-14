@@ -9,7 +9,7 @@ import MtnRunna from '../../public/Mtn_Runna.jpeg';
 import PitStop from '../../public/Pit_Stop.jpeg';
 import Acadia from '../../public/Acadia.jpeg';
 import Dead from '../../public/Dead.jpeg';
-import Workout241 from '../../public/24-1.jpeg';
+import Cresendo from '../../public/Crescendo24.jpg';
 import Coffee_Pastries from '../../public/Coffee&Pastries.jpeg';
 
 function Badge(props:any) {
@@ -159,7 +159,7 @@ export default function About() {
                     <div className="relative h-80">
                         <Image
                         alt="Me waiting for the countdown timer to hit zero to start my workout"
-                        src={Workout241}
+                        src={Cresendo}
                         fill
                         sizes="(min-width: 768px) 213px, 33vw"
                         priority
