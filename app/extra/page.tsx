@@ -7,7 +7,6 @@ import { Navigation } from "../components/nav";
 import EmblaCarousel from "../components/EmblaCarousel";
 import { EmblaOptionsType } from 'embla-carousel';
 import { SHOES } from './shoes';
-import { TYPES } from "./types";
 import Image from "next/image";
 
 const strava_activities_endpoint = "https://www.strava.com/api/v3/athlete/activities?per_page=10"
@@ -44,7 +43,7 @@ export default function ExtrasPage() {
         if (currentTime > tokenExpiresAt){
             refreshToken();
         }
-    }, 18000000);
+    }, 30000);
     
     const refreshToken = async() => {
         const refreshURL: string = strava_refresh_endpoint + "client_id=" + STRAVA_CLIENT_ID + "&client_secret=" + STRAVA_CLIENT_SECRET + 
@@ -67,6 +66,8 @@ export default function ExtrasPage() {
     }
 
     useEffect(() => {
+        refreshToken();
+
         const getUltraActivities = async () => {
             const fiddy: number = 11336245915;
             const sixtyK: number = 9681825811;
