@@ -66,7 +66,6 @@ export default function ExtrasPage() {
     }
 
     useEffect(() => {
-        refreshToken();
 
         const getUltraActivities = async () => {
             const fiddy: number = 11336245915;
