@@ -16,6 +16,15 @@ type PropType = {
   strava: boolean
 }
 
+const dateOptions: Intl.DateTimeFormatOptions = {
+  year: "numeric", 
+  month: "long",
+  day: "2-digit",
+  hour: "2-digit",
+  minute: "2-digit",
+  hourCycle: "h12",
+}
+
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { slides, options, strava } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
@@ -73,7 +82,23 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             <div className="embla__slide" key={index}>
               <div className="embla__slide__number text-center flex flex-col justify-center">
                 { strava ? (
-                  <p>Hello</p>
+                  <div className="embla__slide__number text-center flex flex-col justify-center">
+                    <p className="text-base text-zinc-300 w-full tracking-tighter">
+                      {slide.name}
+                    </p>
+                    <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
+                      Distance: {(slide.distance * 0.000621371).toFixed(2)} miles
+                    </p>
+                    <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
+                      Time: {slide.elapsed_time / 60} minutes
+                    </p>
+                    <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
+                      Activity: {slide.sport_type}
+                    </p>
+                    <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
+                      Date: {new Date(slide.start_date_local).toLocaleString('en-US', dateOptions)}
+                    </p>
+                  </div>
                 )
                 : 
                 (
