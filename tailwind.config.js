@@ -1,12 +1,14 @@
+const {nextui} = require('@nextui-org/theme');
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: [
-		"./app/**/*.{js,ts,jsx,tsx}",
-		"./mdx-components.tsx",
-		"content/**/*.mdx",
-	],
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./mdx-components.tsx",
+    "content/**/*.mdx",
+    "./node_modules/@nextui-org/theme/dist/components/[object Object].js"
+  ],
 
 	theme: {
 		extend: {
@@ -120,8 +122,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [
-		require("@tailwindcss/typography"),
-		require("tailwindcss-debug-screens"),
-	],
+  plugins: [require(@tailwindcss/typography),require(tailwindcss-debug-screens),nextui()],
 };

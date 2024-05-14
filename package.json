@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@next/mdx": "^14.2.1",
+    "@nextui-org/spinner": "^2.0.28",
+    "@nextui-org/system": "^2.1.2",
+    "@nextui-org/theme": "^2.2.3",
     "@upstash/redis": "^1.29.0",
     "contentlayer": "^0.3.4",
     "embla-carousel": "^8.0.4",

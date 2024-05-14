@@ -30,6 +30,7 @@ export default function ExtrasPage() {
     const [sixtyMins, setSixtyMins] = useState<number>(0);
     const [ultraSixtyK, setUltraSixtyK] = useState<any>({});
     const [myStravaProfile, setMyStravaProfile] = useState<any>({});
+    const [timeoutDelay, setTimeoutDelay] = useState<number>(1000);
 
     const [lastTenActivities, setLastTenActivities] = useState<Array<object>>([]);
 
@@ -43,7 +44,7 @@ export default function ExtrasPage() {
         if (currentTime > tokenExpiresAt){
             refreshToken();
         }
-    }, 30000);
+    }, timeoutDelay);
     
     const refreshToken = async() => {
         const refreshURL: string = strava_refresh_endpoint + "client_id=" + STRAVA_CLIENT_ID + "&client_secret=" + STRAVA_CLIENT_SECRET + 
@@ -63,6 +64,7 @@ export default function ExtrasPage() {
         } catch(error) {
             console.log("Oops there was an error \n" + error)
         }
+        setTimeoutDelay(30000)
     }
 
     useEffect(() => {
