@@ -1,6 +1,3 @@
-import Lost_Found from '../../public/aj1_lost&found.webp';
-import WashedBlack from '../../public/aj1_washedblack.webp'
-
 export const SHOES = [
     {
         src: '/NDA-THE-001-WHITEGUMSIDER.webp',
