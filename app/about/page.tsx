@@ -9,7 +9,7 @@ import MtnRunna from '../../public/Mtn_Runna.jpeg';
 import PitStop from '../../public/Pit_Stop.jpeg';
 import Acadia from '../../public/Acadia.jpeg';
 import Dead from '../../public/Dead.jpeg';
-import Cresendo from '../../public/Crescendo24.jpg';
+import Crescendo from '../../public/Crescendo24.jpg';
 import Coffee_Pastries from '../../public/Coffee&Pastries.jpeg';
 
 function Badge(props:any) {
@@ -158,12 +158,12 @@ export default function About() {
                     </div>
                     <div className="relative h-80">
                         <Image
-                        alt="Me waiting for the countdown timer to hit zero to start my workout"
-                        src={Cresendo}
+                        alt="Mid workout during my first crossfit competition at Crash Crescendo"
+                        src={Crescendo}
                         fill
-                        sizes="(min-width: 768px) 213px, 33vw"
+                        sizes="(max-width: 768px) 213px, 33vw"
                         priority
-                        className="rounded-lg object-cover"
+                        className="rounded-lg object-cover object-top"
                         />
                     </div>
                 </div>
