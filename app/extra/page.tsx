@@ -8,6 +8,7 @@ import EmblaCarousel from "../components/EmblaCarousel";
 import { EmblaOptionsType } from 'embla-carousel';
 import { SHOES } from './shoes';
 import Image from "next/image";
+import {Spinner} from "@nextui-org/spinner";
 
 const strava_activities_endpoint = "https://www.strava.com/api/v3/athlete/activities?per_page=10"
 const strava_single_activity_endpoint = "https://www.strava.com/api/v3/activities/"
@@ -31,13 +32,14 @@ export default function ExtrasPage() {
     const [ultraSixtyK, setUltraSixtyK] = useState<any>({});
     const [myStravaProfile, setMyStravaProfile] = useState<any>({});
     const [timeoutDelay, setTimeoutDelay] = useState<number>(1000);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const [lastTenActivities, setLastTenActivities] = useState<Array<object>>([]);
 
     setInterval(() => {
         const now: number = Date.now();
         setCurrentTime(now);
-    }, 1500);
+    }, 1000);
 
     
     setTimeout(() => {
@@ -47,6 +49,7 @@ export default function ExtrasPage() {
     }, timeoutDelay);
     
     const refreshToken = async() => {
+        setIsLoading(true);
         const refreshURL: string = strava_refresh_endpoint + "client_id=" + STRAVA_CLIENT_ID + "&client_secret=" + STRAVA_CLIENT_SECRET + 
             "&grant_type=refresh_token&refresh_token=" + STRAVA_REFRESH_TOKEN;
 
@@ -62,7 +65,7 @@ export default function ExtrasPage() {
                 setTokenExpiresAt(jsonRefreshToken.expires_at);
             }
         } catch(error) {
-            console.log("Oops there was an error \n" + error)
+            throw new Error("Oh no something went wrong" + error);
         }
         setTimeoutDelay(30000)
     }
@@ -140,6 +143,7 @@ export default function ExtrasPage() {
                 if(athleteResponse.ok) {
                     const jsonAthleteResponse = await athleteResponse.json();
                     setMyStravaProfile(jsonAthleteResponse.ytd_run_totals);
+                    setIsLoading(false);
                 }
             } catch(error) {
                 console.log("Oops there was an error \n" + error);
@@ -192,12 +196,36 @@ export default function ExtrasPage() {
                         </p>
 
                         <div className="flex justify-center text-center gap-80">
-                            <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">Runs: {myStravaProfile.count}</p>
-                            <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">Time: {Math.floor((myStravaProfile.elapsed_time/60)/60)} hours {Math.floor((myStravaProfile.elapsed_time/60))%60} mins</p>
+                            <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                Runs: {myStravaProfile.count ? 
+                                    myStravaProfile.count
+                                :
+                                    <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
+                                }
+                            </p>
+                            <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                Time: {myStravaProfile.elapsed_time ?
+                                    `${Math.floor((myStravaProfile.elapsed_time/60)/60)} hours ${Math.floor((myStravaProfile.elapsed_time/60))%60} mins`
+                                :
+                                    <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
+                                }
+                            </p>
                         </div>
                         <div className="flex justify-center text-center gap-60">
-                            <p className="pl-3 mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">Distance: {(myStravaProfile.distance * 0.000621371).toFixed(2)} miles</p>
-                            <p className="pl-3 my-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">Elevation Gain: {Math.round(myStravaProfile.elevation_gain * 3.28084)} ft</p>
+                            <p className="pl-3 mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                Distance: {myStravaProfile.distance ?
+                                    `${(myStravaProfile.distance * 0.000621371).toFixed(2)} miles`
+                                :
+                                    <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
+                                }
+                            </p>
+                            <p className="pl-3 my-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                Elevation Gain: {myStravaProfile.elevation_gain ?
+                                    `${Math.round(myStravaProfile.elevation_gain * 3.28084)} ft`
+                                :
+                                    <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
+                                }
+                            </p>
                         </div>
                     </Card>
                 </div>
@@ -207,29 +235,60 @@ export default function ExtrasPage() {
                 </p>
                 <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
                     <Card>
-                        <h2 className=" text-center mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display">
-                            {ultraFiddy.name}
-                        </h2>
-
-                        <p className="text-center mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">Distance: {(ultraFiddy.distance * 0.000621371).toFixed(2)} miles</p>
-                        <p className="text-center mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">Elevation Gain: {Math.round(ultraFiddy.total_elevation_gain * 3.28084)} ft</p>
-                        <p className="text-center my-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">Time: {fiddyHours} hrs {fiddyMins} mins</p>
+                        {ultraFiddy.name ? (
+                            <>
+                                <h2 className=" text-center mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display">
+                                    {ultraFiddy.name}
+                                </h2>
+                                <p className="text-center mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                    Distance: {(ultraFiddy.distance * 0.000621371).toFixed(2)} miles
+                                </p>
+                                <p className="text-center mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                    Elevation Gain: {Math.round(ultraFiddy.total_elevation_gain * 3.28084)} ft
+                                </p>
+                                <p className="text-center my-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                    Time: {fiddyHours} hrs {fiddyMins} mins
+                                </p>
+                            </>
+                        )
+                        :
+                            <Spinner label="Loading..." size="lg" labelColor="primary" className="my-5 w-full mx-auto"/>
+                        }
+                        
                     </Card>
                     <Card>
-                        <h2 className="text-center mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display">
-                            {ultraSixtyK.name}
-                        </h2>
+                        {ultraSixtyK.name ? (
+                            <>
+                                <h2 className="text-center mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display">
+                                    {ultraSixtyK.name}
+                                </h2>
 
-                        <p className="text-center mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">Distance: {(ultraSixtyK.distance * 0.000621371).toFixed(2)} miles</p>
-                        <p className="text-center mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">Elevation Gain: {Math.round(ultraSixtyK.total_elevation_gain * 3.28084)} ft</p>
-                        <p className="text-center my-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">Time: {sixtyHours} hrs {sixtyMins} mins</p>
+                                <p className="text-center mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                    Distance: {(ultraSixtyK.distance * 0.000621371).toFixed(2)} miles
+                                </p>
+                                <p className="text-center mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                    Elevation Gain: {Math.round(ultraSixtyK.total_elevation_gain * 3.28084)} ft
+                                </p>
+                                <p className="text-center my-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                    Time: {sixtyHours} hrs {sixtyMins} mins
+                                </p>
+                            </>
+                        )
+                        :
+                            <Spinner label="Loading..." labelColor="primary" size="lg" className="my-5 w-full mx-auto"/>
+                        }
+                        
                     </Card>
                 </div>
                 <div className="mx-auto w-1/2 h-px bg-zinc-800" />
                 <p className="text-zinc-400 text-center">
                     10 Most Recent Activities
                 </p>
-                <EmblaCarousel slides={lastTenActivities} options={OPTIONS} strava={true} />
+                {lastTenActivities.length == 10 ? 
+                    <EmblaCarousel slides={lastTenActivities} options={OPTIONS} strava={true} />
+                :
+                    <Spinner label="Loading..." labelColor="primary" size="lg" className="w-full mx-auto"/>
+                }
                 <div className="w-full h-px bg-zinc-800" />
             </div>
             <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
