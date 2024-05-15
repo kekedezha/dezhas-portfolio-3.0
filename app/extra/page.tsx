@@ -32,7 +32,6 @@ export default function ExtrasPage() {
     const [ultraSixtyK, setUltraSixtyK] = useState<any>({});
     const [myStravaProfile, setMyStravaProfile] = useState<any>({});
     const [timeoutDelay, setTimeoutDelay] = useState<number>(1500);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const [lastTenActivities, setLastTenActivities] = useState<Array<object>>([]);
 
@@ -49,7 +48,6 @@ export default function ExtrasPage() {
     }, timeoutDelay);
     
     const refreshToken = async() => {
-        setIsLoading(true);
         const refreshURL: string = strava_refresh_endpoint + "client_id=" + STRAVA_CLIENT_ID + "&client_secret=" + STRAVA_CLIENT_SECRET + 
             "&grant_type=refresh_token&refresh_token=" + STRAVA_REFRESH_TOKEN;
 
@@ -143,7 +141,6 @@ export default function ExtrasPage() {
                 if(athleteResponse.ok) {
                     const jsonAthleteResponse = await athleteResponse.json();
                     setMyStravaProfile(jsonAthleteResponse.ytd_run_totals);
-                    setIsLoading(false);
                 }
             } catch(error) {
                 console.log("Oops there was an error \n" + error);
