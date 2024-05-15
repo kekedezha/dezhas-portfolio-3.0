@@ -31,7 +31,7 @@ export default function ExtrasPage() {
     const [sixtyMins, setSixtyMins] = useState<number>(0);
     const [ultraSixtyK, setUltraSixtyK] = useState<any>({});
     const [myStravaProfile, setMyStravaProfile] = useState<any>({});
-    const [timeoutDelay, setTimeoutDelay] = useState<number>(1000);
+    const [timeoutDelay, setTimeoutDelay] = useState<number>(1500);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const [lastTenActivities, setLastTenActivities] = useState<Array<object>>([]);
