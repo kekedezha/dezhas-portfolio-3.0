@@ -1,4 +1,5 @@
-const nextui = require('@nextui-org/theme');
+// tailwind.config.js
+const {nextui} = require("@nextui-org/react");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
@@ -7,6 +8,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./mdx-components.tsx",
     "content/**/*.mdx",
+	"./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
 
 	theme: {
