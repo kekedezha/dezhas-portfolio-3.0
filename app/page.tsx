@@ -16,13 +16,13 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       <nav className="my-16 animate-fade-in">
-        <ul className="flex items-center justify-center gap-20">
+        <ul className="flex items-center justify-center gap-5 md:gap-16">
           {navigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               target={item.target}
-              className="text-lg duration-5000 text-zinc-500 hover:text-zinc-300"
+              className="max-[320px]:text-[0.5rem] sm:text-xs md:text-lg duration-5000 text-zinc-500 hover:text-zinc-300"
             >
               {item.name}
             </Link>
@@ -37,12 +37,12 @@ export default function Home() {
         <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-fade-out font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
           bienvenidos
         </h1>
-        <h1 className="z-10 text-4xl text-transparent duration-3000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
+        <h1 className="z-10 text-4xl text-transparent duration-3000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-8xl lg:text-9xl whitespace-nowrap bg-clip-text ">
           christian dezha
         </h1>
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <div className="my-16 text-center animate-fade-in">
-        <h2 className="text-sm text-zinc-500 ">
+        <h2 className="max-[320px]:text-[0.5rem] sm:text-xs md:text-sm text-zinc-500 ">
           Coding and 🏃🏽‍♂️ trails from Charlotte, NC! ✌🏽
         </h2>
       </div>
