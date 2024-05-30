@@ -18,7 +18,7 @@ import { DiDjango, DiPostgresql } from "react-icons/di";
 const redis = Redis.fromEnv();
 
 // Style to be passed in as prop for react-icons library
-const style = { color: "white", fontSize: "2.5em" }
+const style = { color: "white", fontSize: "2.15em" }
 
 export const revalidate = 60;
 export default async function ProjectsPage() {

@@ -24,9 +24,9 @@ function Badge(props:any) {
 
 export default function About() {
     return (
-        <div className="bg-gradient-to-tl from-zinc-800/0 via-zinc-800 to-zinc-800/0 px-80 pb-40 pt-20 flex flex-col md:flex-row mx-0 lg:mx-0">
+        <div className="relative pb-16">
             <Navigation />
-            <div className="text-center min-w-0 mt-6 flex flex-auto flex-col justify-center md:px-0">
+            <div className="text-center min-w-0 px-6 pt-20 mx-auto flex flex-auto flex-col justify-center md:px-0">
                 <h1 className="w-full text-slate-200 text-3xl font-medium mb-5">
                     Ayoo, I&#39;m Christian Dezha-Bolteada ✌🏽
                 </h1>
@@ -37,8 +37,8 @@ export default function About() {
                     I thrive in problem solving and crafting up robust solutions. My current tech 
                     stack includes the following technologies:  
                 </p>
-                <ul className='flex justify-center my-6 md:space-x-4'>
-                    <li>
+                <ul className='flex flex-col md:flex-row justify-center my-6 md:space-x-4'>
+                    <li className='my-2 md:my-auto'>
                         <Badge href="https://ecma-international.org/publications-and-standards/standards/ecma-262/">
                             <Image
                                 alt="JavaScript logomark"
@@ -50,7 +50,7 @@ export default function About() {
                             JavaScript
                         </Badge>
                     </li>
-                    <li>
+                    <li className='my-2 md:my-auto'>
                         <Badge href="https://www.typescriptlang.org/">
                             <Image
                                 alt="TypeScript logomark"
@@ -62,7 +62,7 @@ export default function About() {
                             TypeScript
                         </Badge>
                     </li>
-                    <li>
+                    <li className='my-2 md:my-auto'>
                         <Badge href="https://nextjs.org">
                             <Image
                                 alt="Next.js logomark"
@@ -74,7 +74,7 @@ export default function About() {
                             Next.js
                         </Badge>
                     </li>
-                    <li>
+                    <li className='my-2 md:my-auto'>
                         <Badge href="https://nodejs.org/en/">
                             <Image
                                 alt="Node.js logomark"
@@ -86,7 +86,7 @@ export default function About() {
                             Node.js
                         </Badge>
                     </li>
-                    <li>
+                    <li className='my-2 md:my-auto'>
                         <Badge href="https://expressjs.com/">
                             <Image
                                 alt="Express.js logomark"
