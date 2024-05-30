@@ -115,7 +115,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                       alt={slide.alt}
                       width="250"
                       height="50"
-                      className="rounded-lg object-cover object-[-16px] sm:object-center"
+                      className="rounded-lg object-cover sm:object-center"
                     />
                     <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter" >{slide.title}</p>
                     <p className="text-sm text-zinc-300 w-full tracking-tighter" >{slide.purpose}</p>
