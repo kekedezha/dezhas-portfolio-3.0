@@ -188,19 +188,19 @@ export default function ExtrasPage() {
                             className="mx-auto rounded-full"
                         />
 
-                        <p className="text-center mt-2 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                        <p className="text-center mt-2 duration-150 text-zinc-400 group-hover:text-zinc-300 underline md:no-underline">
                             Athlete: Christian Dezha
                         </p>
 
-                        <div className="flex justify-center text-center gap-80">
-                            <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                        <div className="flex flex-col md:flex-row justify-center text-center md:gap-80">
+                            <p className="md:mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                                 Runs: {myStravaProfile.count ? 
                                     myStravaProfile.count
                                 :
                                     <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
                                 }
                             </p>
-                            <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                            <p className="md:mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                                 Time: {myStravaProfile.elapsed_time ?
                                     `${Math.floor((myStravaProfile.elapsed_time/60)/60)} hours ${Math.floor((myStravaProfile.elapsed_time/60))%60} mins`
                                 :
@@ -208,7 +208,7 @@ export default function ExtrasPage() {
                                 }
                             </p>
                         </div>
-                        <div className="flex justify-center text-center gap-60">
+                        <div className="flex flex-col md:flex-row justify-center text-center md:gap-60">
                             <p className="pl-3 mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                                 Distance: {myStravaProfile.distance ?
                                     `${(myStravaProfile.distance * 0.000621371).toFixed(2)} miles`
@@ -234,7 +234,7 @@ export default function ExtrasPage() {
                     <Card>
                         {ultraFiddy.name ? (
                             <>
-                                <h2 className=" text-center mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display">
+                                <h2 className=" text-center mt-4 px-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display">
                                     {ultraFiddy.name}
                                 </h2>
                                 <p className="text-center mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
