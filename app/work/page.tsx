@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <div className="antialiased bg-gradient-to-tl from-zinc-800/0 via-zinc-800 to-zinc-800/0 px-80 pb-40 pt-20 flex flex-col justify-center md:flex-row mx-0 lg:mx-0">
+    <div className="relative pb-16">
       <Navigation />
-        <div className="prose prose-neutral dark:prose-invert">
+        <div className="px-6 pt-20 mx-auto prose prose-neutral dark:prose-invert">
             <h1 className="font-medium text-2xl mb-8 tracking-tighter">my work</h1>
             <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
             <h2 className="font-medium text-xl mb-1 tracking-tighter">RoviSys Building Technologies</h2>
@@ -121,7 +121,6 @@ export default function WorkPage() {
                 Administered and assisted in project finances/forecasting to ensure and maximize profit
               </li>
             </ul>
-            <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         </div>
     </div>
   );
