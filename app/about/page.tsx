@@ -163,7 +163,7 @@ export default function About() {
                         fill
                         sizes="(max-width: 768px) 213px, 33vw"
                         priority
-                        className="rounded-lg object-cover object-top"
+                        className="rounded-lg object-cover object-right md:object-top"
                         />
                     </div>
                 </div>
