@@ -1,5 +1,5 @@
 // tailwind.config.js
-const {nextui} = require("@nextui-org/react");
+// const {nextui} = require("@nextui-org/react");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
@@ -44,15 +44,15 @@ module.exports = {
 				title: "title 8s ease-out forwards",
 				"fade-left": "fade-left 5s ease-in-out forwards",
 				"fade-right": "fade-right 5s ease-in-out forwards",
-				"fade-out": "fade-out 3s ease-out forwards"
+				"fade-out": "fade-out 3s ease-out forwards",
 			},
 			keyframes: {
 				"fade-in": {
 					"0%": {
-						opacity: "0%",
+						opacity: "0",
 					},
 					"75%": {
-						opacity: "0%",
+						opacity: "0",
 					},
 					"100%": {
 						opacity: "100%",
@@ -70,7 +70,7 @@ module.exports = {
 					"100%": {
 						opacity: "0%",
 						display: "none",
-						"line-height": "0%"
+						"line-height": "0%",
 					},
 				},
 				"fade-left": {
@@ -126,6 +126,6 @@ module.exports = {
   plugins: [
 	require('@tailwindcss/typography'),
 	require('tailwindcss-debug-screens'),
-	nextui(),
+	// nextui(),
 ],
 };
