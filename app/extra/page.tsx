@@ -8,6 +8,8 @@ import EmblaCarousel from "../components/EmblaCarousel";
 import { EmblaOptionsType } from 'embla-carousel';
 import { SHOES } from './shoes';
 import Image from "next/image";
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 const strava_activities_endpoint = "https://www.strava.com/api/v3/athlete/activities?per_page=10"
 const strava_single_activity_endpoint = "https://www.strava.com/api/v3/activities/"
@@ -196,6 +198,9 @@ export default function ExtrasPage() {
                                 Runs: {myStravaProfile.count ? 
                                     myStravaProfile.count
                                 :
+                                    <Box sx={{display: 'flex'}}>
+                                        <CircularProgress />
+                                    </Box>
                                     // <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
                                 }
                             </p>
@@ -203,6 +208,9 @@ export default function ExtrasPage() {
                                 Time: {myStravaProfile.elapsed_time ?
                                     `${Math.floor((myStravaProfile.elapsed_time/60)/60)} hours ${Math.floor((myStravaProfile.elapsed_time/60))%60} mins`
                                 :
+                                    <Box sx={{display: 'flex'}}>
+                                        <CircularProgress />
+                                    </Box>
                                     // <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
                                 }
                             </p>
@@ -212,6 +220,9 @@ export default function ExtrasPage() {
                                 Distance: {myStravaProfile.distance ?
                                     `${(myStravaProfile.distance * 0.000621371).toFixed(2)} miles`
                                 :
+                                    <Box sx={{display: 'flex'}}>
+                                        <CircularProgress />
+                                    </Box>
                                     // <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
                                 }
                             </p>
@@ -219,6 +230,9 @@ export default function ExtrasPage() {
                                 Elevation Gain: {myStravaProfile.elevation_gain ?
                                     `${Math.round(myStravaProfile.elevation_gain * 3.28084)} ft`
                                 :
+                                    <Box sx={{display: 'flex'}}>
+                                        <CircularProgress />
+                                    </Box>
                                     // <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
                                 }
                             </p>
@@ -248,6 +262,9 @@ export default function ExtrasPage() {
                             </>
                         )
                         :
+                            <Box sx={{ display: 'flex', my: '5rem', width: 1, mx: 'auto', justifyContent: 'center' }}>
+                                <CircularProgress />
+                            </Box>
                             // <Spinner label="Loading..." size="lg" labelColor="primary" className="my-5 w-full mx-auto"/>
                         }
                         
@@ -271,6 +288,9 @@ export default function ExtrasPage() {
                             </>
                         )
                         :
+                            <Box sx={{ display: 'flex', my: '5rem', width: 1, mx: 'auto', justifyContent: 'center' }}>
+                                <CircularProgress />
+                            </Box>
                             // <Spinner label="Loading..." labelColor="primary" size="lg" className="my-5 w-full mx-auto"/>
                         }
                         
@@ -283,6 +303,9 @@ export default function ExtrasPage() {
                 {lastTenActivities.length == 10 ? 
                     <EmblaCarousel slides={lastTenActivities} options={OPTIONS} strava={true} />
                 :
+                <Box sx={{ display: 'flex', width: 1, mx: 'auto', justifyContent: 'center' }}>
+                <CircularProgress />
+            </Box>
                     // <Spinner label="Loading..." labelColor="primary" size="lg" className="w-full mx-auto"/>
                 }
                 <div className="w-full h-px bg-zinc-800" />
