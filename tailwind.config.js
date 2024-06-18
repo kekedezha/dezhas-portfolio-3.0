@@ -1,5 +1,4 @@
 // tailwind.config.js
-// const {nextui} = require("@nextui-org/react");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
@@ -126,6 +125,5 @@ module.exports = {
   plugins: [
 	require('@tailwindcss/typography'),
 	require('tailwindcss-debug-screens'),
-	// nextui(),
 ],
 };

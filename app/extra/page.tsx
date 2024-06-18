@@ -8,7 +8,6 @@ import EmblaCarousel from "../components/EmblaCarousel";
 import { EmblaOptionsType } from 'embla-carousel';
 import { SHOES } from './shoes';
 import Image from "next/image";
-import {Spinner} from "@nextui-org/spinner";
 
 const strava_activities_endpoint = "https://www.strava.com/api/v3/athlete/activities?per_page=10"
 const strava_single_activity_endpoint = "https://www.strava.com/api/v3/activities/"
@@ -197,14 +196,14 @@ export default function ExtrasPage() {
                                 Runs: {myStravaProfile.count ? 
                                     myStravaProfile.count
                                 :
-                                    <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
+                                    // <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
                                 }
                             </p>
                             <p className="md:mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                                 Time: {myStravaProfile.elapsed_time ?
                                     `${Math.floor((myStravaProfile.elapsed_time/60)/60)} hours ${Math.floor((myStravaProfile.elapsed_time/60))%60} mins`
                                 :
-                                    <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
+                                    // <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
                                 }
                             </p>
                         </div>
@@ -213,14 +212,14 @@ export default function ExtrasPage() {
                                 Distance: {myStravaProfile.distance ?
                                     `${(myStravaProfile.distance * 0.000621371).toFixed(2)} miles`
                                 :
-                                    <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
+                                    // <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
                                 }
                             </p>
                             <p className="pl-3 my-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                                 Elevation Gain: {myStravaProfile.elevation_gain ?
                                     `${Math.round(myStravaProfile.elevation_gain * 3.28084)} ft`
                                 :
-                                    <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
+                                    // <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
                                 }
                             </p>
                         </div>
@@ -249,7 +248,7 @@ export default function ExtrasPage() {
                             </>
                         )
                         :
-                            <Spinner label="Loading..." size="lg" labelColor="primary" className="my-5 w-full mx-auto"/>
+                            // <Spinner label="Loading..." size="lg" labelColor="primary" className="my-5 w-full mx-auto"/>
                         }
                         
                     </Card>
@@ -272,7 +271,7 @@ export default function ExtrasPage() {
                             </>
                         )
                         :
-                            <Spinner label="Loading..." labelColor="primary" size="lg" className="my-5 w-full mx-auto"/>
+                            // <Spinner label="Loading..." labelColor="primary" size="lg" className="my-5 w-full mx-auto"/>
                         }
                         
                     </Card>
@@ -284,7 +283,7 @@ export default function ExtrasPage() {
                 {lastTenActivities.length == 10 ? 
                     <EmblaCarousel slides={lastTenActivities} options={OPTIONS} strava={true} />
                 :
-                    <Spinner label="Loading..." labelColor="primary" size="lg" className="w-full mx-auto"/>
+                    // <Spinner label="Loading..." labelColor="primary" size="lg" className="w-full mx-auto"/>
                 }
                 <div className="w-full h-px bg-zinc-800" />
             </div>
