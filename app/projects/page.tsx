@@ -8,45 +8,64 @@ import { Redis } from "@upstash/redis"; //Import HTTP/REST based Redis database 
 
 //Import icons to be used
 import { Eye } from "lucide-react";
-import { FaHtml5, FaCss3Alt, FaReact, FaTerminal, FaNpm, FaNode, FaGithub, FaJava, FaPython, FaBootstrap, FaSwift } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaTerminal,
+  FaNpm,
+  FaNode,
+  FaGithub,
+  FaJava,
+  FaPython,
+  FaBootstrap,
+  FaSwift,
+} from "react-icons/fa";
 import { IoLogoJavascript, IoLogoFirebase } from "react-icons/io5";
 import { FaGit } from "react-icons/fa6";
-import { SiTypescript, SiTailwindcss, SiRedux, SiExpress, SiOpenai, SiNextdotjs } from "react-icons/si";
+import {
+  SiTypescript,
+  SiTailwindcss,
+  SiRedux,
+  SiExpress,
+  SiOpenai,
+  SiNextdotjs,
+} from "react-icons/si";
 import { DiDjango, DiPostgresql } from "react-icons/di";
 
-// Create Redis instance using your environment variables that should be your REST_URL and REST_TOKEN for the db you created on upstash 
+// Create Redis instance using your environment variables that should be your REST_URL and REST_TOKEN for the db you created on upstash
 const redis = Redis.fromEnv();
 
 // Style to be passed in as prop for react-icons library
-const style = { color: "white", fontSize: "2.15em" }
+const style = { color: "white", fontSize: "2.15em" };
 
 export const revalidate = 60;
 export default async function ProjectsPage() {
-
   const views = (
     await redis.mget<number[]>(
-      ...allProjects.map((p) => ["pageviews", "projects", p.slug].join(":")), // Use mget to get an array of 'views' page for each key in the db
+      ...allProjects.map((p) => ["pageviews", "projects", p.slug].join(":")) // Use mget to get an array of 'views' page for each key in the db
     )
   ).reduce((acc, v, i) => {
     acc[allProjects[i].slug] = v ?? 0;
     return acc;
   }, {} as Record<string, number>); // Reduce the array of views into an object as {allProjects[i].slug: string, views: number}
 
-
   // Featured projects - giftfAIry
   const featured = allProjects.find((project) => project.slug === "giftfairy")!;
+  const top2 = allProjects.find((project) => project.slug === "reddit_app")!;
 
-  // Sort the rest of the projects, not including the featured. 
+  // Sort the rest of the projects, not including the featured.
   const sorted = allProjects
     .filter((p) => p.published) // Show projects that have published key = true
     .filter(
       (project) =>
-        project.slug !== featured.slug //Filter out featured project.
-    ) 
+        project.slug !== featured.slug && //Filter out featured project.
+        project.slug !== top2.slug
+    )
     .sort(
       (a, b) =>
         new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
-        new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
+        new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
     );
 
   return (
@@ -78,7 +97,7 @@ export default async function ProjectsPage() {
                   <span className="flex items-center gap-1 text-xs text-zinc-500">
                     <Eye className="w-4 h-4" />{" "}
                     {Intl.NumberFormat("en-US", { notation: "compact" }).format(
-                      views[featured.slug] ?? 0,
+                      views[featured.slug] ?? 0
                     )}
                   </span>
                 </div>
@@ -100,6 +119,11 @@ export default async function ProjectsPage() {
               </article>
             </Link>
           </Card>
+          <div className="flex flex-col w-full gap-8 mx-auto border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
+            <Card key={top2.slug}>
+              <Article project={top2} views={views[top2.slug] ?? 0} />
+            </Card>
+          </div>
         </div>
         <div className="hidden w-full h-px md:block bg-zinc-800" />
 
@@ -109,10 +133,10 @@ export default async function ProjectsPage() {
               .filter((_, i) => i % 3 === 0)
               .map((project) => (
                 <Card key={project.slug}>
-                    {/* Inside card display article component
+                  {/* Inside card display article component
                         with projects and views passed down as props
                         views - get the views for the correct project, if no project found then display zero */}
-                  <Article project={project}  views={views[project.slug] ?? 0} />
+                  <Article project={project} views={views[project.slug] ?? 0} />
                 </Card>
               ))}
           </div>
@@ -121,10 +145,10 @@ export default async function ProjectsPage() {
               .filter((_, i) => i % 3 === 1)
               .map((project) => (
                 <Card key={project.slug}>
-                    {/* Inside card display article component
+                  {/* Inside card display article component
                         with projects and views passed down as props
                         views - get the views for the correct project, if no project found then display zero */}
-                  <Article project={project}  views={views[project.slug] ?? 0} />
+                  <Article project={project} views={views[project.slug] ?? 0} />
                 </Card>
               ))}
           </div>
@@ -133,10 +157,10 @@ export default async function ProjectsPage() {
               .filter((_, i) => i % 3 === 2)
               .map((project) => (
                 <Card key={project.slug}>
-                    {/* Inside card display article component
+                  {/* Inside card display article component
                         with projects and views passed down as props
                         views - get the views for the correct project, if no project found then display zero */}
-                  <Article project={project}  views={views[project.slug] ?? 0} /> 
+                  <Article project={project} views={views[project.slug] ?? 0} />
                 </Card>
               ))}
           </div>
@@ -147,7 +171,7 @@ export default async function ProjectsPage() {
             <FaHtml5 style={style} title="HTML" />
             <FaCss3Alt style={style} title="CSS" />
             <IoLogoJavascript style={style} title="JavaScript" />
-            <SiTypescript style={style}title="TypeScript" />
+            <SiTypescript style={style} title="TypeScript" />
             <FaReact style={style} title="React" />
             <FaGit style={style} title="Git" />
           </div>
