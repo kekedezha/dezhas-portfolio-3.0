@@ -47,7 +47,6 @@ export default function ExtrasPage() {
 
   setTimeout(() => {
     if (currentTime > tokenExpiresAt) {
-      console.log("Trying to refresh Strava access token");
       refreshToken();
     }
   }, timeoutDelay);
