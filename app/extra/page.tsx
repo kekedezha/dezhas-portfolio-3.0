@@ -166,7 +166,7 @@ export default function ExtrasPage() {
       <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
         <div className="mt-auto w-full">
           <h2 className="w-full text-3xl text-center font-bold tracking-tight text-zinc-400">
-            ...a little extra info about me :)
+            ... a little extra info about me :)
           </h2>
         </div>
         <div className="max-w-2xl mt-auto lg:mx-0">
@@ -181,7 +181,7 @@ export default function ExtrasPage() {
         <div className="w-full flex flex-col justify-center">
           <Card>
             <h3 className="text-center my-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display">
-              Stats - 2024
+              Stats - 2025
             </h3>
 
             <Image
@@ -216,8 +216,7 @@ export default function ExtrasPage() {
                   myStravaProfile.elapsed_time ? (
                     `${Math.floor(
                       myStravaProfile.elapsed_time / 60 / 60
-                    )} hours ${
-                      Math.floor(myStravaProfile.elapsed_time / 60) % 60
+                    )} hours ${Math.floor(myStravaProfile.elapsed_time / 60) % 60
                     } mins`
                   ) : (
                     <Box sx={{ display: "flex" }}>

@@ -53,6 +53,7 @@ export default async function ProjectsPage() {
   // Featured projects - giftfAIry
   const featured = allProjects.find((project) => project.slug === "giftfairy")!;
   const top2 = allProjects.find((project) => project.slug === "reddit_app")!;
+  const top3 = allProjects.find((project) => project.slug === "meditation_app")!;
 
   // Sort the rest of the projects, not including the featured.
   const sorted = allProjects
@@ -60,7 +61,8 @@ export default async function ProjectsPage() {
     .filter(
       (project) =>
         project.slug !== featured.slug && //Filter out featured project.
-        project.slug !== top2.slug
+        project.slug !== top2.slug &&
+        project.slug !== top3.slug
     )
     .sort(
       (a, b) =>
@@ -122,6 +124,9 @@ export default async function ProjectsPage() {
           <div className="flex flex-col w-full gap-8 mx-auto border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
             <Card key={top2.slug}>
               <Article project={top2} views={views[top2.slug] ?? 0} />
+            </Card>
+            <Card key={top3.slug}>
+              <Article project={top3} views={views[top3.slug] ?? 0} />
             </Card>
           </div>
         </div>
