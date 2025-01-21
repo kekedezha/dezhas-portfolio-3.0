@@ -6,10 +6,10 @@ import { Card } from "../components/card";
 import { Navigation } from "../components/nav";
 import EmblaCarousel from "../components/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
-import { SHOES } from "./shoes";
 import Image from "next/image";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import { FiInfo } from 'react-icons/fi'
 
 const strava_activities_endpoint =
   "https://www.strava.com/api/v3/athlete/activities?per_page=10";
@@ -164,16 +164,13 @@ export default function ExtrasPage() {
     <div className="relative pb-16">
       <Navigation />
       <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-        <div className="mt-auto w-full">
-          <h2 className="w-full text-3xl text-center font-bold tracking-tight text-zinc-400">
-            ... a little extra info about me :)
-          </h2>
-        </div>
         <div className="max-w-2xl mt-auto lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
             Strava
           </h2>
-          <p className="mt-4 text-zinc-400">Some of my Strava stats:</p>
+          <p className="mt-4 text-xl text-zinc-400 flex gap-2">
+            Some of my Strava stats: <FiInfo />
+          </p>
           <p className="mt-2 text-xs text-zinc-400">
             Info and stats pulled from Strava&#39;s V3 API
           </p>
@@ -358,16 +355,6 @@ export default function ExtrasPage() {
           // <Spinner label="Loading..." labelColor="primary" size="lg" className="w-full mx-auto"/>
         }
         <div className="w-full h-px bg-zinc-800" />
-      </div>
-      <div className="px-6 pt-20 mx-auto space-y-2 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-        <div className="max-w-2xl mt-auto lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-            Shoes
-          </h2>
-          <p className="mt-4 text-zinc-400">My current shoe rotation:</p>
-        </div>
-
-        <EmblaCarousel slides={SHOES} options={OPTIONS} strava={false} />
       </div>
     </div>
   );
