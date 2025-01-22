@@ -1,16 +1,15 @@
 "use client";
 
 import Image from 'next/image';
-import { BlogLink } from '../components/bloglink';
 import { Navigation } from "../components/nav";
 
 // Import pictures 
-import MtnRunna from '../../public/Mtn_Runna.jpeg';
-import PitStop from '../../public/Pit_Stop.jpeg';
-import Acadia from '../../public/Acadia.jpeg';
-import Dead from '../../public/Dead.jpeg';
-import Crescendo from '../../public/Crescendo24.jpg';
-import NYC_Sandwich from '../../public/nyc_sandwich.jpg';
+import MtnRunna from '../../public/images/Mtn_Runna.jpeg';
+import PitStop from '../../public/images/Pit_Stop.jpeg';
+import Acadia from '../../public/images/Acadia.jpeg';
+import Dead from '../../public/images/Dead.jpeg';
+import Crescendo from '../../public/images/Crescendo24.jpg';
+import NYC_Sandwich from '../../public/images/nyc_sandwich.jpg';
 import Link from 'next/link';
 
 function Badge(props: any) {
