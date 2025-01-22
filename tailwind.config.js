@@ -1,3 +1,4 @@
+const { heroui } = require("@heroui/theme");
 // tailwind.config.js
 const defaultTheme = require("tailwindcss/defaultTheme");
 
@@ -7,123 +8,125 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./mdx-components.tsx",
     "content/**/*.mdx",
-	"./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@heroui/theme/dist/components/popover.js",
   ],
 
-	theme: {
-		extend: {
-			typography: {
-				DEFAULT: {
-					css: {
-						"code::before": {
-							content: '""',
-						},
-						"code::after": {
-							content: '""',
-						},
-					},
-				},
-				quoteless: {
-					css: {
-						"blockquote p:first-of-type::before": { content: "none" },
-						"blockquote p:first-of-type::after": { content: "none" },
-					},
-				},
-			},
-			fontFamily: {
-				sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
-				display: ["var(--font-calsans)"],
-			},
-			backgroundImage: {
-				"gradient-radial":
-					"radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))",
-			},
-			animation: {
-				"fade-in": "fade-in 5s ease-in-out forwards",
-				title: "title 8s ease-out forwards",
-				"fade-left": "fade-left 5s ease-in-out forwards",
-				"fade-right": "fade-right 5s ease-in-out forwards",
-				"fade-out": "fade-out 3s ease-out forwards",
-			},
-			keyframes: {
-				"fade-in": {
-					"0%": {
-						opacity: "0",
-					},
-					"75%": {
-						opacity: "0",
-					},
-					"100%": {
-						opacity: "100%",
-					},
-				},
-				"fade-out": {
-					"0%": {
-						opacity: "100%",
-						display: "block",
-						"line-height": "100%",
-					},
-					"75%": {
-						opacity: "100%",
-					},
-					"100%": {
-						opacity: "0%",
-						display: "none",
-						"line-height": "0%",
-					},
-				},
-				"fade-left": {
-					"0%": {
-						transform: "translateX(100%)",
-						opacity: "0%",
-					},
+  theme: {
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            "code::before": {
+              content: '""',
+            },
+            "code::after": {
+              content: '""',
+            },
+          },
+        },
+        quoteless: {
+          css: {
+            "blockquote p:first-of-type::before": { content: "none" },
+            "blockquote p:first-of-type::after": { content: "none" },
+          },
+        },
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+        display: ["var(--font-calsans)"],
+      },
+      backgroundImage: {
+        "gradient-radial":
+          "radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))",
+      },
+      animation: {
+        "fade-in": "fade-in 5s ease-in-out forwards",
+        title: "title 8s ease-out forwards",
+        "fade-left": "fade-left 5s ease-in-out forwards",
+        "fade-right": "fade-right 5s ease-in-out forwards",
+        "fade-out": "fade-out 3s ease-out forwards",
+      },
+      keyframes: {
+        "fade-in": {
+          "0%": {
+            opacity: "0",
+          },
+          "75%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "100%",
+          },
+        },
+        "fade-out": {
+          "0%": {
+            opacity: "100%",
+            display: "block",
+            "line-height": "100%",
+          },
+          "75%": {
+            opacity: "100%",
+          },
+          "100%": {
+            opacity: "0%",
+            display: "none",
+            "line-height": "0%",
+          },
+        },
+        "fade-left": {
+          "0%": {
+            transform: "translateX(100%)",
+            opacity: "0%",
+          },
 
-					"30%": {
-						transform: "translateX(0%)",
-						opacity: "100%",
-					},
-					"100%": {
-						opacity: "0%",
-					},
-				},
-				"fade-right": {
-					"0%": {
-						transform: "translateX(-100%)",
-						opacity: "0%",
-					},
+          "30%": {
+            transform: "translateX(0%)",
+            opacity: "100%",
+          },
+          "100%": {
+            opacity: "0%",
+          },
+        },
+        "fade-right": {
+          "0%": {
+            transform: "translateX(-100%)",
+            opacity: "0%",
+          },
 
-					"30%": {
-						transform: "translateX(0%)",
-						opacity: "100%",
-					},
-					"100%": {
-						opacity: "0%",
-					},
-				},
-				title: {
-					"0%": {
-						"line-height": "0%",
-						"letter-spacing": "0.25em",
-						opacity: "0",
-					},
-					"25%": {
-						"line-height": "0%",
-						opacity: "0%",
-					},
-					"80%": {
-						opacity: "100%",
-					},
+          "30%": {
+            transform: "translateX(0%)",
+            opacity: "100%",
+          },
+          "100%": {
+            opacity: "0%",
+          },
+        },
+        title: {
+          "0%": {
+            "line-height": "0%",
+            "letter-spacing": "0.25em",
+            opacity: "0",
+          },
+          "25%": {
+            "line-height": "0%",
+            opacity: "0%",
+          },
+          "80%": {
+            opacity: "100%",
+          },
 
-					"100%": {
-						"line-height": "100%",
-						opacity: "100%",
-					},
-				},
-			},
-		},
-	},
+          "100%": {
+            "line-height": "100%",
+            opacity: "100%",
+          },
+        },
+      },
+    },
+  },
   plugins: [
-	require('@tailwindcss/typography'),
-	require('tailwindcss-debug-screens'),
-],
+    require("@tailwindcss/typography"),
+    require("tailwindcss-debug-screens"),
+    heroui(),
+  ],
 };
