@@ -43,7 +43,7 @@ export default function About() {
                         <Badge href="https://ecma-international.org/publications-and-standards/standards/ecma-262/">
                             <Image
                                 alt="JavaScript logomark"
-                                src="/js.png"
+                                src="/project_icons/js.png"
                                 className="!mr-1"
                                 width="16"
                                 height="16"
@@ -55,7 +55,7 @@ export default function About() {
                         <Badge href="https://www.typescriptlang.org/">
                             <Image
                                 alt="TypeScript logomark"
-                                src="/typescript.png"
+                                src="/project_icons/typescript.png"
                                 className="!mr-1"
                                 width="16"
                                 height="16"
@@ -67,7 +67,7 @@ export default function About() {
                         <Badge href="https://nextjs.org">
                             <Image
                                 alt="Next.js logomark"
-                                src="/next-logo.svg"
+                                src="/project_icons/next-logo.svg"
                                 className="!mr-1"
                                 width="16"
                                 height="16"
@@ -79,7 +79,7 @@ export default function About() {
                         <Badge href="https://nodejs.org/en/">
                             <Image
                                 alt="Node.js logomark"
-                                src="/programing.png"
+                                src="/project_icons/programing.png"
                                 className="!mr-1"
                                 width="16"
                                 height="16"
@@ -91,7 +91,7 @@ export default function About() {
                         <Badge href="https://expressjs.com/">
                             <Image
                                 alt="Express.js logomark"
-                                src="/express.png"
+                                src="/project_icons/express.png"
                                 className="!mr-1"
                                 width="16"
                                 height="16"
