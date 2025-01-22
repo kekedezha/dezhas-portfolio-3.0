@@ -26,7 +26,8 @@ export default function About() {
     return (
         <div className="relative pb-16">
             <Navigation />
-            <div className="text-center min-w-0 px-6 pt-20 mx-auto flex flex-auto flex-col justify-center md:px-0">
+            <div className="text-center px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+                {/* <div className="text-center min-w-0 px-6 pt-20 mx-auto flex flex-auto flex-col justify-center md:px-0"> */}
                 <h1 className="w-full text-slate-200 text-3xl font-medium mb-5">
                     Ayoo, I&#39;m Christian Dezha-Bolteada ✌🏽
                 </h1>
