@@ -10,7 +10,8 @@ import PitStop from '../../public/Pit_Stop.jpeg';
 import Acadia from '../../public/Acadia.jpeg';
 import Dead from '../../public/Dead.jpeg';
 import Crescendo from '../../public/Crescendo24.jpg';
-import Coffee_Pastries from '../../public/Coffee&Pastries.jpeg';
+import NYC_Sandwich from '../../public/nyc_sandwich.jpg';
+import Link from 'next/link';
 
 function Badge(props: any) {
     return (
@@ -106,7 +107,7 @@ export default function About() {
                     problems and innovating scalable solutions.
                     My collaborative approach and strong communication skills enable me to work effectively in cross-functional teams.
                 </p>
-                <div className="my-8 columns-2 gap-4 sm:columns-3">
+                <div className="my-6 columns-2 gap-4 sm:columns-3">
                     <div className="relative mb-4 h-40">
                         <Image
                             alt="Laying down on the floor after a brutal workout known as 24.1"
@@ -127,7 +128,7 @@ export default function About() {
                             className="rounded-lg object-cover object-[-16px] sm:object-center"
                         />
                     </div>
-                    <div className="relative h-40 sm:mb-4 sm:h-80">
+                    <div className="relative h-160 sm:mb-4 sm:h-80">
                         <Image
                             alt="Me sitting in front of a sign for Acadia National Park"
                             src={Acadia}
@@ -137,16 +138,16 @@ export default function About() {
                             className="rounded-lg object-cover sm:object-center"
                         />
                     </div>
-                    <div className="relative mb-4 h-40 sm:mb-0">
+                    {/* <div className="relative mb-4 h-40 sm:mb-0">
                         <Image
-                            alt="The way to my heart. Coffee and pastries."
-                            src={Coffee_Pastries}
+                            alt="One of the best sandwiches I've ever had from All'Antico Vinaio NYC"
+                            src={NYC_Sandwich}
                             fill
                             sizes="(max-width: 768px) 213px, 33vw"
                             priority
-                            className="rounded-lg object-cover object-bottom"
+                            className="rounded-lg object-none object-center"
                         />
-                    </div>
+                    </div> */}
                     <div className="relative mb-4 h-40">
                         <Image
                             alt="Me running through the Canadian mountains"
@@ -168,28 +169,24 @@ export default function About() {
                         />
                     </div>
                 </div>
-                <div className="text-lg text-zinc-300 w-full mb-4">
+                <div className="text-lg text-zinc-300 w-full">
                     <p>
                         Recently, I have enjoyed developing my web-app, <a className="underline text-blue-400" href="https://aigiftfairy.com" target='_blank'>GIFTFaiRY🧚🏻</a>, using the React and Django frameworks. The project has helped me to
                         accelerate my learning for both Front-End and Back-End Development!
                     </p>
                 </div>
-                <div className="text-lg text-zinc-300 w-full mb-2">
+                <div className="text-lg text-zinc-300 w-full">
                     <p>
                         Outside of coding 💻, I enjoy
                         trail running 🏃🏽‍♂️, pushing my body&#39;s limits doing functional fitness 🏋🏽‍♂️, exploring new eats and coffee shops, all which fuels my creativity and perspective
                         while keeping me sane. Looking ahead, I&#39;m eager to continue honing my skills and contributing to impactful projects that push the boundaries of technology.
                     </p>
-                </div>
-                <div className="my-8 flex w-full flex-col space-y-4">
-                    <p className='text-left text-zinc-300 text-xl'>✨FUN FACTS: </p>
-                    <BlogLink name="I started off in CS in college, eventually switching to Applied Physics to pursue a more hands-on degree once
-                    I got to grad school. Fast forward a couple years later and what do you know... I&#39;m back in CS."
-                        slug="https://physics.appstate.edu/academics/graduate-programs" timer={false} />
-                    <BlogLink name="I got to visit Easter Island in 2020 🗿, a week or two before everything in the world shutdown 🦠."
-                        slug="https://www.chile.travel/en/where-to-go/macrozone/rapa-nui/" timer={false} />
-                    <BlogLink name={`After only running one 5K and three 10Ks, I signed up to run my first Ultra Marathon in 2023 (oh and I only 
-                        had less than two months to train for it).`} slug="https://www.runbumtours.com/graysonhighlands" timer={true} />
+                    <p>
+                        If you&#39;re interested in learning a little more about me outside of programming head over to the <Link key={'explore-link-in-line'}
+                            href={"/extra"}
+                            target={"_self"}
+                            className='underline text-blue-400'>Extra</Link> page!
+                    </p>
                 </div>
             </div>
         </div>
