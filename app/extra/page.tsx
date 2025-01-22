@@ -10,6 +10,8 @@ import Image from "next/image";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import { FiInfo } from 'react-icons/fi'
+import { Tooltip } from "@mui/material";
+import IconButton from "@mui/material/IconButton"
 
 const strava_activities_endpoint =
   "https://www.strava.com/api/v3/athlete/activities?per_page=10";
@@ -168,12 +170,16 @@ export default function ExtrasPage() {
           <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
             Strava
           </h2>
-          <p className="mt-4 text-xl text-zinc-400 flex gap-2">
-            Some of my Strava stats: <FiInfo />
-          </p>
-          <p className="mt-2 text-xs text-zinc-400">
-            Info and stats pulled from Strava&#39;s V3 API
-          </p>
+          <div className="flex gap-1">
+            <p className="mt-4 text-xl text-zinc-400">
+              Some of my Strava stats:
+            </p>
+            <Tooltip title="Info and stats pulled from Strava&#39;s V3 API" arrow placement="top">
+              <IconButton aria-label="Tool-tip" size="small" >
+                <FiInfo color="white" />
+              </IconButton>
+            </Tooltip>
+          </div>
         </div>
         <div className="w-full flex flex-col justify-center">
           <Card>
@@ -204,7 +210,6 @@ export default function ExtrasPage() {
                       <CircularProgress />
                     </Box>
                   )
-                  // <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
                 }
               </p>
               <p className="md:mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
@@ -220,7 +225,6 @@ export default function ExtrasPage() {
                       <CircularProgress />
                     </Box>
                   )
-                  // <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
                 }
               </p>
             </div>
@@ -237,7 +241,6 @@ export default function ExtrasPage() {
                       <CircularProgress />
                     </Box>
                   )
-                  // <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
                 }
               </p>
               <p className="pl-3 my-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
@@ -250,14 +253,13 @@ export default function ExtrasPage() {
                       <CircularProgress />
                     </Box>
                   )
-                  // <Spinner label="Loading..." labelColor="primary" size="sm" className="ml-2"/>
                 }
               </p>
             </div>
           </Card>
         </div>
         <div className="mx-auto w-1/2 h-px bg-zinc-800" />
-        <p className="text-zinc-400 text-center">Ultra Runs</p>
+        <p className="text-zinc-400 text-center text-2xl">Ultra Runs</p>
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
           <Card>
             {
@@ -291,7 +293,6 @@ export default function ExtrasPage() {
                   <CircularProgress />
                 </Box>
               )
-              // <Spinner label="Loading..." size="lg" labelColor="primary" className="my-5 w-full mx-auto"/>
             }
           </Card>
           <Card>
@@ -327,7 +328,6 @@ export default function ExtrasPage() {
                   <CircularProgress />
                 </Box>
               )
-              // <Spinner label="Loading..." labelColor="primary" size="lg" className="my-5 w-full mx-auto"/>
             }
           </Card>
         </div>
@@ -352,7 +352,6 @@ export default function ExtrasPage() {
               <CircularProgress />
             </Box>
           )
-          // <Spinner label="Loading..." labelColor="primary" size="lg" className="w-full mx-auto"/>
         }
         <div className="w-full h-px bg-zinc-800" />
       </div>
