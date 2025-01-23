@@ -51,8 +51,8 @@ export default function Contact() {
 									{s.icon}
 								</span>{" "}
 								<div className="z-10 flex flex-col items-center">
-									{s.handle == "Christian Dezha-Bolteada" || s.handle == "dezhac6@gmail.com" ?
-										(<span className="lg:text-lg font-medium duration-150 xl:text-xl text-zinc-200 group-hover:text-white font-display text-nowrap text-align:center">
+									{s.handle == "Christian Dezha" || s.handle == "dezhac6@gmail.com" ?
+										(<span className="lg:text-lg font-medium duration-150 xl:text-3xl text-zinc-200 group-hover:text-white font-display text-nowrap text-align:center">
 											{s.handle}
 										</span>)
 										:
