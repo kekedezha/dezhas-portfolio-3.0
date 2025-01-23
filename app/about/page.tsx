@@ -102,7 +102,7 @@ export default function About() {
                     problems and innovating scalable solutions.
                     My collaborative approach and strong communication skills enable me to work effectively in cross-functional teams.
                 </p>
-                <div className='px-64'>
+                <div className='px-0 lg:px-64'>
                     <ImageGrid
                         columns={2}
                         images={[
