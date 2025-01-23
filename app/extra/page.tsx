@@ -188,7 +188,7 @@ export default function ExtrasPage() {
             </h3>
 
             <Image
-              src="/strava_profile.jpeg"
+              src="/images/strava_profile.jpeg"
               alt="Strava Profile Pic"
               width="150"
               height="150"

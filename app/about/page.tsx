@@ -1,15 +1,7 @@
-"use client";
-
 import Image from 'next/image';
 import { Navigation } from "../components/nav";
-
-// Import pictures 
-import MtnRunna from '../../public/images/Mtn_Runna.jpeg';
-import PitStop from '../../public/images/Pit_Stop.jpeg';
-import Acadia from '../../public/images/Acadia.jpeg';
-import Dead from '../../public/images/Dead.jpeg';
-import Crescendo from '../../public/images/Crescendo24.jpg';
-import NYC_Sandwich from '../../public/images/nyc_sandwich.jpg';
+import type { Metadata } from "next";
+import { ImageGrid } from "app/components/image-grid";
 import Link from 'next/link';
 
 function Badge(props: any) {
@@ -21,6 +13,10 @@ function Badge(props: any) {
         />
     );
 }
+export const metadata: Metadata = {
+    title: "Photos",
+    description: "My Photos",
+};
 
 export default function About() {
     return (
@@ -106,67 +102,16 @@ export default function About() {
                     problems and innovating scalable solutions.
                     My collaborative approach and strong communication skills enable me to work effectively in cross-functional teams.
                 </p>
-                <div className="my-6 columns-2 gap-4 sm:columns-3">
-                    <div className="relative mb-4 h-40">
-                        <Image
-                            alt="Laying down on the floor after a brutal workout known as 24.1"
-                            src={Dead}
-                            fill
-                            sizes="(max-width: 768px) 213px, 33vw"
-                            priority
-                            className="rounded-lg object-cover"
-                        />
-                    </div>
-                    <div className="relative mb-4 h-80 sm:mb-0">
-                        <Image
-                            alt="Arriving at aid-station #3 at my first ultra marathon"
-                            src={PitStop}
-                            fill
-                            sizes="(max-width: 768px) 213px, 33vw"
-                            priority
-                            className="rounded-lg object-cover object-[-16px] sm:object-center"
-                        />
-                    </div>
-                    <div className="relative h-160 sm:mb-4 sm:h-80">
-                        <Image
-                            alt="Me sitting in front of a sign for Acadia National Park"
-                            src={Acadia}
-                            fill
-                            sizes="(max-width: 768px) 213px, 33vw"
-                            priority
-                            className="rounded-lg object-cover sm:object-center"
-                        />
-                    </div>
-                    {/* <div className="relative mb-4 h-40 sm:mb-0">
-                        <Image
-                            alt="One of the best sandwiches I've ever had from All'Antico Vinaio NYC"
-                            src={NYC_Sandwich}
-                            fill
-                            sizes="(max-width: 768px) 213px, 33vw"
-                            priority
-                            className="rounded-lg object-none object-center"
-                        />
-                    </div> */}
-                    <div className="relative mb-4 h-40">
-                        <Image
-                            alt="Me running through the Canadian mountains"
-                            src={MtnRunna}
-                            fill
-                            sizes="(max-width: 768px) 213px, 33vw"
-                            priority
-                            className="rounded-lg object-cover object-bottom"
-                        />
-                    </div>
-                    <div className="relative h-80">
-                        <Image
-                            alt="Mid workout during my first crossfit competition at Crash Crescendo"
-                            src={Crescendo}
-                            fill
-                            sizes="(max-width: 768px) 213px, 33vw"
-                            priority
-                            className="rounded-lg object-cover object-right md:object-top"
-                        />
-                    </div>
+                <div className='px-64'>
+                    <ImageGrid
+                        columns={2}
+                        images={[
+                            { src: "/images/Acadia.jpeg", alt: "Pic at Acadia National Park" },
+                            { src: "/images/Crescendo24.jpg", alt: "First Comp at Crash Crescendo" },
+                            { src: "/images/Mtn_Runna.jpeg", alt: "Running my first Ultra through the mountains" },
+                            { src: "/images/keep_smiling.jpeg", alt: "Keep Smiling" },
+                        ]}
+                    />
                 </div>
                 <div className="text-lg text-zinc-300 w-full">
                     <p>
@@ -180,7 +125,7 @@ export default function About() {
                         trail running 🏃🏽‍♂️, pushing my body&#39;s limits doing functional fitness 🏋🏽‍♂️, exploring new eats and coffee shops, all which fuels my creativity and perspective
                         while keeping me sane. Looking ahead, I&#39;m eager to continue honing my skills and contributing to impactful projects that push the boundaries of technology.
                     </p>
-                    <p>
+                    <p className='mt-4'>
                         If you&#39;re interested in learning a little more about me outside of programming head over to the <Link key={'explore-link-in-line'}
                             href={"/extra"}
                             target={"_self"}
