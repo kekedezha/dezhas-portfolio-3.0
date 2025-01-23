@@ -22,12 +22,11 @@ export default function About() {
     return (
         <div className="relative pb-16">
             <Navigation />
-            <div className="text-center px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
-                {/* <div className="text-center min-w-0 px-6 pt-20 mx-auto flex flex-auto flex-col justify-center md:px-0"> */}
+            <div className="text-center px-6 pt-20 mx-auto space-y-8 max-w-4xl md:space-y-16 md:pt-24 lg:pt-32">
                 <h1 className="w-full text-slate-200 text-3xl font-medium mb-5">
                     Ayoo, I&#39;m Christian Dezha-Bolteada ✌🏽
                 </h1>
-                <p className="text-lg text-zinc-300 w-full">
+                <p className="text-lg text-zinc-300 w-full text-justify">
                     I&#39;m an aspiring software engineer based out of Charlotte, North Carolina,
                     with over a year and a half of experience specializing in full-stack development
                     and 5 years specializing in controls & automation as a systems/controls engineer.
@@ -96,13 +95,13 @@ export default function About() {
                         </Badge>
                     </li>
                 </ul>
-                <p className="text-lg text-zinc-300 w-full">
+                <p className="text-lg text-zinc-300 w-full text-justify">
                     What excites me the most about software
                     engineering is the never ending road of learning, solving complex
                     problems and innovating scalable solutions.
                     My collaborative approach and strong communication skills enable me to work effectively in cross-functional teams.
                 </p>
-                <div className='px-0 lg:px-64'>
+                <div >
                     <ImageGrid
                         columns={2}
                         images={[
@@ -113,13 +112,13 @@ export default function About() {
                         ]}
                     />
                 </div>
-                <div className="text-lg text-zinc-300 w-full">
+                <div className="text-lg text-zinc-300 w-full text-justify">
                     <p>
                         Recently, I have enjoyed developing my web-app, <a className="underline text-blue-400" href="https://aigiftfairy.com" target='_blank'>GIFTFaiRY🧚🏻</a>, using the React and Django frameworks. The project has helped me to
                         accelerate my learning for both Front-End and Back-End Development!
                     </p>
                 </div>
-                <div className="text-lg text-zinc-300 w-full">
+                <div className="text-lg text-zinc-300 w-full text-justify">
                     <p>
                         Outside of coding 💻, I enjoy
                         trail running 🏃🏽‍♂️, pushing my body&#39;s limits doing functional fitness 🏋🏽‍♂️, exploring new eats and coffee shops, all which fuels my creativity and perspective
