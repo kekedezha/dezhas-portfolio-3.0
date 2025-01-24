@@ -200,19 +200,24 @@ export default function ExtrasPage() {
             </p>
 
             <div className="flex flex-col md:flex-row justify-center text-center md:gap-80">
-              <p className="md:mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+              <p className="flex items-center justify-center mt-2 md:mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                 Runs:{" "}
                 {
                   myStravaProfile.count ? (
                     myStravaProfile.count
                   ) : (
-                    <Box sx={{ display: "flex" }}>
-                      <CircularProgress />
+
+                    <Box sx={{
+                      marginLeft: "1rem",
+                      display: "flex",
+                      alignItems: "baseline"
+                    }}>
+                      <CircularProgress size={30} />
                     </Box>
                   )
                 }
               </p>
-              <p className="md:mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+              <p className="flex items-center justify-center mt-2 md:mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                 Time:{" "}
                 {
                   myStravaProfile.elapsed_time ? (
@@ -221,15 +226,19 @@ export default function ExtrasPage() {
                     )} hours ${Math.floor(myStravaProfile.elapsed_time / 60) % 60
                     } mins`
                   ) : (
-                    <Box sx={{ display: "flex" }}>
-                      <CircularProgress />
+                    <Box sx={{
+                      marginLeft: "1rem",
+                      display: "flex",
+                      alignItems: "baseline"
+                    }}>
+                      <CircularProgress size={30} />
                     </Box>
                   )
                 }
               </p>
             </div>
             <div className="flex flex-col mb-8 md:flex-row justify-center text-center md:gap-60">
-              <p className="pl-3 mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+              <p className="flex items-center justify-center pl-3 mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                 Distance:{" "}
                 {
                   myStravaProfile.distance ? (
@@ -237,20 +246,28 @@ export default function ExtrasPage() {
                       2
                     )} miles`
                   ) : (
-                    <Box sx={{ display: "flex" }}>
-                      <CircularProgress />
+                    <Box sx={{
+                      marginLeft: "1rem",
+                      display: "flex",
+                      alignItems: "baseline"
+                    }}>
+                      <CircularProgress size={30} />
                     </Box>
                   )
                 }
               </p>
-              <p className="pl-3 my-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+              <p className="flex items-center justify-center pl-3 mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                 Elevation Gain:{" "}
                 {
                   myStravaProfile.elevation_gain ? (
                     `${Math.round(myStravaProfile.elevation_gain * 3.28084)} ft`
                   ) : (
-                    <Box sx={{ display: "flex" }}>
-                      <CircularProgress />
+                    <Box sx={{
+                      marginLeft: "1rem",
+                      display: "flex",
+                      alignItems: "baseline"
+                    }}>
+                      <CircularProgress size={30} />
                     </Box>
                   )
                 }
@@ -259,7 +276,8 @@ export default function ExtrasPage() {
 
             <p className="text-white text-center font-bold">*10 Most Recent Activities*</p>
             {
-              lastTenActivities.length == 10 ? (
+              // lastTenActivities.length == 10
+              false ? (
                 <EmblaCarousel
                   slides={lastTenActivities}
                   options={OPTIONS}
@@ -272,6 +290,7 @@ export default function ExtrasPage() {
                     width: 1,
                     mx: "auto",
                     justifyContent: "center",
+                    marginY: "2rem"
                   }}
                 >
                   <CircularProgress />
