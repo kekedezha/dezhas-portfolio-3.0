@@ -17,7 +17,7 @@ type PropType = {
 }
 
 const dateOptions: Intl.DateTimeFormatOptions = {
-  year: "numeric", 
+  year: "numeric",
   month: "long",
   day: "2-digit",
   hour: "2-digit",
@@ -82,45 +82,45 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
               <div className="embla__slide__number text-center flex flex-col justify-center">
-                { strava ? (
+                {strava ? (
                   <div className="embla__slide__number text-center flex flex-col justify-center">
-                    <p className="text-base text-zinc-300 w-full tracking-tighter underline">
+                    <p className="text-base text-zinc-400 w-full tracking-tighter underline">
                       {slide.name}
                     </p>
-                    <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
+                    <p className="mt-2 text-base text-zinc-400 w-full tracking-tighter">
                       Distance: {(slide.distance * 0.000621371).toFixed(2)} miles
                     </p>
-                    {slide.distance > 35000 ? 
-                      <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
-                        Time: {Math.floor((slide.elapsed_time/60)/60)} hours {Math.floor((slide.elapsed_time/60))%60} mins
+                    {slide.distance > 35000 ?
+                      <p className="mt-2 text-base text-zinc-400 w-full tracking-tighter">
+                        Time: {Math.floor((slide.elapsed_time / 60) / 60)} hours {Math.floor((slide.elapsed_time / 60)) % 60} mins
                       </p>
-                    :
-                      <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
-                        Time: {Math.floor((slide.moving_time/60)/60)} hours {Math.floor((slide.moving_time/60))%60} mins {Math.floor(slide.moving_time)%60} seconds
+                      :
+                      <p className="mt-2 text-base text-zinc-400 w-full tracking-tighter">
+                        Time: {Math.floor((slide.moving_time / 60) / 60)} hours {Math.floor((slide.moving_time / 60)) % 60} mins {Math.floor(slide.moving_time) % 60} seconds
                       </p>
                     }
-                    <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
+                    <p className="mt-2 text-base text-zinc-400 w-full tracking-tighter">
                       Activity: {slide.sport_type}
                     </p>
-                    <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter">
+                    <p className="mt-2 text-base text-zinc-400 w-full tracking-tighter">
                       Date: {new Date(slide.start_date_local).toLocaleString('en-US', dateOptions)}
                     </p>
                   </div>
                 )
-                : 
-                (
-                  <div className="embla__slide__number text-center flex flex-col justify-center">
-                    <Image 
-                      src={slide.src}
-                      alt={slide.alt}
-                      width="250"
-                      height="50"
-                      className="rounded-lg object-cover sm:object-center"
-                    />
-                    <p className="mt-2 text-base text-zinc-300 w-full tracking-tighter" >{slide.title}</p>
-                    <p className="text-sm text-zinc-300 w-full tracking-tighter" >{slide.purpose}</p>
-                  </div>
-                )
+                  :
+                  (
+                    <div className="embla__slide__number text-center flex flex-col justify-center">
+                      <Image
+                        src={slide.src}
+                        alt={slide.alt}
+                        width="250"
+                        height="50"
+                        className="rounded-lg object-cover sm:object-center"
+                      />
+                      <p className="mt-2 text-base text-zinc-400 w-full tracking-tighter" >{slide.title}</p>
+                      <p className="text-sm text-zinc-400 w-full tracking-tighter" >{slide.purpose}</p>
+                    </div>
+                  )
                 }
               </div>
             </div>

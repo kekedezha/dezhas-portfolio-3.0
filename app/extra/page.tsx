@@ -228,7 +228,7 @@ export default function ExtrasPage() {
                 }
               </p>
             </div>
-            <div className="flex flex-col md:flex-row justify-center text-center md:gap-60">
+            <div className="flex flex-col mb-8 md:flex-row justify-center text-center md:gap-60">
               <p className="pl-3 mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                 Distance:{" "}
                 {
@@ -256,6 +256,28 @@ export default function ExtrasPage() {
                 }
               </p>
             </div>
+
+            <p className="text-white text-center font-bold">*10 Most Recent Activities*</p>
+            {
+              lastTenActivities.length == 10 ? (
+                <EmblaCarousel
+                  slides={lastTenActivities}
+                  options={OPTIONS}
+                  strava={true}
+                />
+              ) : (
+                <Box
+                  sx={{
+                    display: "flex",
+                    width: 1,
+                    mx: "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  <CircularProgress />
+                </Box>
+              )
+            }
           </Card>
         </div>
         <div className="mx-auto w-1/2 h-px bg-zinc-800" />
@@ -331,29 +353,7 @@ export default function ExtrasPage() {
             }
           </Card>
         </div>
-        <div className="mx-auto w-1/2 h-px bg-zinc-800" />
-        <p className="text-zinc-400 text-center">10 Most Recent Activities</p>
-        {
-          lastTenActivities.length == 10 ? (
-            <EmblaCarousel
-              slides={lastTenActivities}
-              options={OPTIONS}
-              strava={true}
-            />
-          ) : (
-            <Box
-              sx={{
-                display: "flex",
-                width: 1,
-                mx: "auto",
-                justifyContent: "center",
-              }}
-            >
-              <CircularProgress />
-            </Box>
-          )
-        }
-        <div className="w-full h-px bg-zinc-800" />
+        <div className="w-full h-px bg-zinc-800 mb-4" />
       </div>
     </div>
   );
