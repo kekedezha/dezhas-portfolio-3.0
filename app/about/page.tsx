@@ -1,6 +1,7 @@
+"use client";
+
 import Image from 'next/image';
 import { Navigation } from "../components/nav";
-import type { Metadata } from "next";
 import { ImageGrid } from "app/components/image-grid";
 import Link from 'next/link';
 
@@ -13,10 +14,6 @@ function Badge(props: any) {
         />
     );
 }
-export const metadata: Metadata = {
-    title: "Photos",
-    description: "My Photos",
-};
 
 export default function About() {
     return (

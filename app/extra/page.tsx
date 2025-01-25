@@ -11,7 +11,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import { FiInfo } from 'react-icons/fi'
 import { Tooltip } from "@mui/material";
-import IconButton from "@mui/material/IconButton"
+import IconButton from "@mui/material/IconButton";
+import { ImageGrid } from "app/components/image-grid";
 
 const strava_activities_endpoint =
   "https://www.strava.com/api/v3/athlete/activities?per_page=10";
@@ -276,8 +277,7 @@ export default function ExtrasPage() {
 
             <p className="text-white text-center font-bold">*10 Most Recent Activities*</p>
             {
-              // lastTenActivities.length == 10
-              false ? (
+              lastTenActivities.length == 10 ? (
                 <EmblaCarousel
                   slides={lastTenActivities}
                   options={OPTIONS}
@@ -373,6 +373,47 @@ export default function ExtrasPage() {
           </Card>
         </div>
         <div className="w-full h-px bg-zinc-800 mb-4" />
+      </div>
+      <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+        <h2 className="text-right text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+          Photos
+        </h2>
+        <div>
+          <ImageGrid
+            columns={3}
+            images={[
+              { src: "/photos/60k_aid_station_3.jpeg", alt: "Walking up to my 3rd aid station at my first ultra run" },
+              { src: "/photos/bent_creek.jpeg", alt: "Bent Creek Forest in Asheville, NC" },
+              { src: "/photos/blue_ridge_parkway.jpeg", alt: "Blue Ridge Parkway in Asheville, NC" },
+              { src: "/photos/chile_overlook.JPG", alt: "Somewhere in the Andes mountain range in Chile" },
+              { src: "/photos/santiago_chile.jpeg", alt: "The beautiful city of Santiago, Chile" },
+              { src: "/photos/versatile_comp.JPG", alt: "CFV in house comp" },
+            ]}
+          />
+          <ImageGrid
+            columns={2}
+            images={[
+              { src: "/photos/nc_state_fair_turkey_leg.JPEG", alt: "My first turkey leg at the 2024 NC State fair in Raleigh, NC" },
+              { src: "/photos/nyc_sandwich.jpg", alt: "Italian owned NYC sandwich" },
+              { src: "/photos/banff.jpeg", alt: "Banff National Park" },
+              { src: "/photos/jbalvin.jpeg", alt: "J Balvin in Santaigo, Chile" },
+
+            ]}
+          />
+          <ImageGrid
+            columns={4}
+            images={[
+              { src: "/photos/acadia_beach.jpeg", alt: "Small beach at Acadia National Park" },
+              { src: "/photos/andes_moutains.JPG", alt: "Somewhere else in the Andes, Chile" },
+              { src: "/photos/easter_island.jpeg", alt: "Easter Island" },
+              { src: "/photos/winter_classic.JPG", alt: "2025 Winter Classic at CFV" },
+              { src: "/photos/twisted_5k.JPG", alt: "2024 Twisted 5k at QC Fit West in October" },
+              { src: "/photos/max_patch.jpeg", alt: "Max Patch, NC" },
+              { src: "/photos/zion.jpeg", alt: "Zion, Utah" },
+              { src: "/photos/nc_state_fair_donut.JPEG", alt: "The most delicious donut at the 2024 NC State fair" },
+            ]}
+          />
+        </div>
       </div>
     </div>
   );
