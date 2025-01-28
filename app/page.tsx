@@ -6,7 +6,7 @@ const navigation = [
   { name: "About", href: "/about", target: "_self" },
   { name: "Projects", href: "/projects", target: "_self" },
   { name: "Work", href: "/work", target: "_self" },
-  // { name: "Blog", href: "/blog", target: "_self" },
+  { name: "Blog", href: "/blog", target: "_self" },
   { name: "Contact", href: "/contact", target: "_self" },
   { name: "Extra", href: "/extra", target: "_self" },
   { name: "Resume", href: "https://docsend.com/view/cuuiw3fmjnb7rf5u", target: "_blank" },

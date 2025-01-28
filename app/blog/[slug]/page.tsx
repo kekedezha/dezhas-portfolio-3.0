@@ -11,7 +11,11 @@ export async function generateStaticParams() {
     }))
 }
 
-export function generateMetadata({ params }) {
+interface MetaDataProps {
+    slug: string
+}
+
+export function generateMetadata({ params }: { params: MetaDataProps }) {
     let post = getBlogPosts().find((post) => post.slug === params.slug)
     if (!post) {
         return
@@ -51,7 +55,7 @@ export function generateMetadata({ params }) {
     }
 }
 
-export default function Blog({ params }) {
+export default function Blog({ params }: { params: MetaDataProps }) {
     let post = getBlogPosts().find((post) => post.slug === params.slug)
 
     if (!post) {
