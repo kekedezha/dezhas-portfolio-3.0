@@ -111,12 +111,9 @@ export default function About() {
                 </div>
                 <div className="text-lg text-zinc-300 w-full text-justify">
                     <p>
-                        Recently, I have enjoyed developing my web-app, <a className="underline text-blue-400" href="https://aigiftfairy.com" target='_blank'>GIFTFaiRY🧚🏻</a>, using the React and Django frameworks. The project has helped me to
-                        accelerate my learning for both Front-End and Back-End Development!
+                        Recently, I have enjoyed developing my web-app, <a className="underline text-blue-400" href="https://aigiftfairy.com" target='_blank'>GIFTFaiRY🧚🏻</a>, using the React and Django frameworks. The project has helped me to accelerate my learning for both Front-End and Back-End Development!
                     </p>
-                </div>
-                <div className="text-lg text-zinc-300 w-full text-justify">
-                    <p>
+                    <p className='mt-4'>
                         Outside of coding 💻, I enjoy
                         trail running 🏃🏽‍♂️, pushing my body&#39;s limits doing functional fitness 🏋🏽‍♂️, exploring new eats and coffee shops, all which fuels my creativity and perspective
                         while keeping me sane. Looking ahead, I&#39;m eager to continue honing my skills and contributing to impactful projects that push the boundaries of technology.
