@@ -26,57 +26,21 @@ export default function About() {
                 <p className="text-lg text-zinc-300 w-full text-justify">
                     I&#39;m an aspiring software engineer based out of Charlotte, North Carolina,
                     with over a year and a half of experience specializing in full-stack development
-                    and 5 years specializing in controls & automation as a systems/controls engineer.
+                    and 5.5 years specializing in controls & automation as a systems/controls engineer.
                     I thrive in problem solving and crafting up robust solutions. My current tech
                     stack includes the following technologies:
                 </p>
                 <ul className='flex flex-col md:flex-row justify-center my-6 md:space-x-4'>
                     <li className='my-2 md:my-auto'>
-                        <Badge href="https://ecma-international.org/publications-and-standards/standards/ecma-262/">
+                        <Badge href="https://www.postgresql.org/">
                             <Image
-                                alt="JavaScript logomark"
-                                src="/project_icons/js.png"
+                                alt="PostgreSQL logomark"
+                                src="/project_icons/postgres_logo.png"
                                 className="!mr-1"
                                 width="16"
                                 height="16"
                             />
-                            JavaScript
-                        </Badge>
-                    </li>
-                    <li className='my-2 md:my-auto'>
-                        <Badge href="https://www.typescriptlang.org/">
-                            <Image
-                                alt="TypeScript logomark"
-                                src="/project_icons/typescript.png"
-                                className="!mr-1"
-                                width="16"
-                                height="16"
-                            />
-                            TypeScript
-                        </Badge>
-                    </li>
-                    <li className='my-2 md:my-auto'>
-                        <Badge href="https://nextjs.org">
-                            <Image
-                                alt="Next.js logomark"
-                                src="/project_icons/next-logo.svg"
-                                className="!mr-1"
-                                width="16"
-                                height="16"
-                            />
-                            Next.js
-                        </Badge>
-                    </li>
-                    <li className='my-2 md:my-auto'>
-                        <Badge href="https://nodejs.org/en/">
-                            <Image
-                                alt="Node.js logomark"
-                                src="/project_icons/programing.png"
-                                className="!mr-1"
-                                width="16"
-                                height="16"
-                            />
-                            Node.js
+                            PostgreSQL
                         </Badge>
                     </li>
                     <li className='my-2 md:my-auto'>
@@ -91,12 +55,48 @@ export default function About() {
                             Express.js
                         </Badge>
                     </li>
+                    <li className='my-2 md:my-auto'>
+                        <Badge href="https://react.dev/">
+                            <Image
+                                alt="React logomark"
+                                src="/project_icons/reactjs_icon.png"
+                                className="!mr-1"
+                                width="16"
+                                height="16"
+                            />
+                            React
+                        </Badge>
+                    </li>
+                    <li className='my-2 md:my-auto'>
+                        <Badge href="https://nodejs.org/en/">
+                            <Image
+                                alt="Node.js logomark"
+                                src="/project_icons/programming.png"
+                                className="!mr-1"
+                                width="16"
+                                height="16"
+                            />
+                            Node.js
+                        </Badge>
+                    </li>
+                    <li className='my-2 md:my-auto'>
+                        <Badge href="https://www.python.org/">
+                            <Image
+                                alt="Python logomark"
+                                src="/project_icons/python.png"
+                                className="!mr-1"
+                                width="16"
+                                height="16"
+                            />
+                            Python
+                        </Badge>
+                    </li>
                 </ul>
                 <p className="text-lg text-zinc-300 w-full text-justify">
                     What excites me the most about software
                     engineering is the never ending road of learning, solving complex
                     problems and innovating scalable solutions.
-                    My collaborative approach and strong communication skills enable me to work effectively in cross-functional teams.
+                    My collaborative and self-starter approach and strong communication skills enable me to work effectively in cross-functional teams.
                 </p>
                 <div >
                     <ImageGrid
