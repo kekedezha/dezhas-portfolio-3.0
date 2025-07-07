@@ -52,8 +52,8 @@ export default async function ProjectsPage() {
 
   // Featured projects - giftfAIry
   const featured = allProjects.find((project) => project.slug === "giftfairy")!;
-  const top2 = allProjects.find((project) => project.slug === "reddit_app")!;
-  const top3 = allProjects.find((project) => project.slug === "meditation_app")!;
+  const top2 = allProjects.find((project) => project.slug === "ecomm_x_backend")!;
+  const top3 = allProjects.find((project) => project.slug === "reddit_app")!;
 
   // Sort the rest of the projects, not including the featured.
   const sorted = allProjects
