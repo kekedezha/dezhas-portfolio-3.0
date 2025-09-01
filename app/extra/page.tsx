@@ -404,8 +404,8 @@ export default function ExtrasPage() {
             columns={4}
             images={[
               { src: "/photos/acadia_beach.jpeg", alt: "Small beach at Acadia National Park" },
-              { src: "/photos/andes_moutains.JPG", alt: "Somewhere else in the Andes, Chile" },
               { src: "/photos/easter_island.jpeg", alt: "Easter Island" },
+              { src: "/photos/andes_moutains.JPG", alt: "Somewhere else in the Andes, Chile" },
               { src: "/photos/winter_classic.JPG", alt: "2025 Winter Classic at CFV" },
               { src: "/photos/twisted_5k.JPG", alt: "2024 Twisted 5k at QC Fit West in October" },
               { src: "/photos/max_patch.jpeg", alt: "Max Patch, NC" },
