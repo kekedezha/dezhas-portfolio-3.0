@@ -25,7 +25,7 @@ export default function About() {
                 </h1>
                 <p className="text-lg text-zinc-300 w-full text-justify">
                     I&#39;m an aspiring software engineer based out of Charlotte, North Carolina,
-                    with tow years of experience specializing in full-stack development
+                    with 2 years of experience specializing in full-stack development
                     and 6 years specializing in controls & automation as a systems/controls engineer.
                     I thrive in problem solving and crafting up robust solutions. My current tech
                     stack includes the following technologies:
