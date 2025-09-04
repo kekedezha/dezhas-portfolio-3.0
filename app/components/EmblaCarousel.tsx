@@ -56,6 +56,24 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     [emblaApi]
   )
 
+  const getPace = (distanceMeters: number, timeSeconds: number): string => {
+    if (distanceMeters <= 0 || timeSeconds <= 0) {
+      return "N/A";
+    }
+
+    const miles = distanceMeters / 1609.344;
+    const paceSecondsPerMile = timeSeconds / miles;
+
+    const minutes = Math.floor(paceSecondsPerMile / 60);
+    const seconds = Math.round(paceSecondsPerMile % 60);
+
+    // Handle edge case where seconds round up to 60
+    const formattedSeconds = seconds === 60 ? "00" : seconds.toString().padStart(2, "0");
+    const formattedMinutes = seconds === 60 ? minutes + 1 : minutes;
+
+    return `${formattedMinutes}:${formattedSeconds} /mi`;
+  }
+
   const toggleAutoplay = useCallback(() => {
     const autoplay = emblaApi?.plugins()?.autoplay
     if (!autoplay) return
@@ -87,17 +105,28 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     <p className="text-base text-zinc-400 w-full tracking-tighter underline">
                       {slide.name}
                     </p>
-                    <p className="mt-2 text-base text-zinc-400 w-full tracking-tighter">
-                      Distance: {(slide.distance * 0.000621371).toFixed(2)} miles
-                    </p>
-                    {slide.distance > 35000 ?
+                    {slide.sport_type === "Run" ?
                       <p className="mt-2 text-base text-zinc-400 w-full tracking-tighter">
-                        Time: {Math.floor((slide.elapsed_time / 60) / 60)} hours {Math.floor((slide.elapsed_time / 60)) % 60} mins
+                        Distance: {(slide.distance * 0.000621371).toFixed(2)} miles
+                      </p>
+                      :
+                      <></>
+                    }
+                    {slide.elapsed_time > 3600 ?
+                      <p className="mt-2 text-base text-zinc-400 w-full tracking-tighter">
+                        Time: {Math.floor((slide.moving_time / 60) / 60)} hours {Math.floor((slide.moving_time / 60)) % 60} mins
                       </p>
                       :
                       <p className="mt-2 text-base text-zinc-400 w-full tracking-tighter">
-                        Time: {Math.floor((slide.moving_time / 60) / 60)} hours {Math.floor((slide.moving_time / 60)) % 60} mins {Math.floor(slide.moving_time) % 60} seconds
+                        Time: {Math.floor((slide.moving_time / 60)) % 60} mins {Math.floor(slide.moving_time) % 60} seconds
                       </p>
+                    }
+                    {slide.sport_type === "Run" ?
+                      <p className="mt-2 text-base text-zinc-400 w-full tracking-tighter">
+                        Pace: {getPace(slide.distance, slide.moving_time)}
+                      </p>
+                      :
+                      <></>
                     }
                     <p className="mt-2 text-base text-zinc-400 w-full tracking-tighter">
                       Activity: {slide.sport_type}
