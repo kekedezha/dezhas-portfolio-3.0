@@ -26,6 +26,16 @@ const STRAVA_CLIENT_SECRET = process.env.NEXT_PUBLIC_STRAVA_CLIENT_SECRET;
 const MY_ATHLETE_ID = 69048099;
 const OPTIONS: EmblaOptionsType = { loop: true };
 
+const dateOptions: Intl.DateTimeFormatOptions = {
+  year: "numeric",
+  month: "long",
+  day: "2-digit",
+  hour: "2-digit",
+  minute: "2-digit",
+  hourCycle: "h12",
+  timeZone: "UTC",
+}
+
 export default function ExtrasPage() {
   const [stravaAccessToken, setStravaAccessToken] = useState<string>(
     "55abd378ded6af1d8f706f94cd1bbc36a248692a"
@@ -320,6 +330,9 @@ export default function ExtrasPage() {
                   <p className="text-center my-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                     Time: {fiddyHours} hrs {fiddyMins} mins
                   </p>
+                  <p className="text-center my-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                    Date: {new Date(ultraFiddy.start_date_local).toLocaleString('en-US', dateOptions)}
+                  </p>
                 </>
               ) : (
                 <Box
@@ -354,6 +367,9 @@ export default function ExtrasPage() {
                   </p>
                   <p className="text-center my-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                     Time: {sixtyHours} hrs {sixtyMins} mins
+                  </p>
+                  <p className="text-center my-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                    Date: {new Date(ultraSixtyK.start_date_local).toLocaleString('en-US', dateOptions)}
                   </p>
                 </>
               ) : (
